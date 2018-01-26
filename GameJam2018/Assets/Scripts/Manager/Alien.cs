@@ -39,17 +39,32 @@ public class Alien : MonoBehaviour
     /// The gas required to be happy and survive
     /// </summary>
     public Gas BreathableAtmosphere;
-        
 
-	// Use this for initialization
-	void Start ()
+    /// <summary>
+    /// The gas that creates unhappiness and death
+    /// </summary>
+    public Gas ToxicAtmosphere;
+
+    // Use this for initialization
+    void Start()
     {
         RegenerateRacialName();
 
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    // Update is called once per frame
+    void Update()
+    {
+        var goodGas = AtmosphereManager.GetGas(this.BreathableAtmosphere.GasType);
+        var badGas = AtmosphereManager.GetGas(this.ToxicAtmosphere.GasType);
+
+        float breathableTolerance = 0.1f;
+
+        if (goodGas.GasType != GasType.Null)        
+            if (Mathf.Abs(goodGas.Percentage - BreathableAtmosphere.Percentage) < breathableTolerance)
+                ScoreManager.ImproveUberRating(breathableTolerance * Time.deltaTime);        
+
+        if (badGas.GasType != GasType.Null)        
+            ScoreManager.DamageUberRating(badGas.Percentage * Time.deltaTime);    
+    }
 }
