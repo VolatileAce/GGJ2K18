@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
+
+    public string WinMessage = "You Win";
     /// <summary>
     /// The current score rating being left by the Alien Pax
     /// </summary>

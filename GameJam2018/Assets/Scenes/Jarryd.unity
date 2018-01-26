@@ -303,9 +303,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b1406fc87e097d43aa7909f6fde42fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RacialName: Alien
   BreathableAtmosphere:
     GasType: 1
     Percentage: 20
+  ToxicAtmosphere:
+    GasType: 0
+    Percentage: 0
 --- !u!4 &1332012512
 Transform:
   m_ObjectHideFlags: 0
@@ -360,4 +364,46 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 690b31cf070755d4eac52d394e1dd85e, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &2079573164
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4677282934416044, guid: cdf32dfcd615742489d82f667c67cf99, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4677282934416044, guid: cdf32dfcd615742489d82f667c67cf99, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4677282934416044, guid: cdf32dfcd615742489d82f667c67cf99, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4677282934416044, guid: cdf32dfcd615742489d82f667c67cf99, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4677282934416044, guid: cdf32dfcd615742489d82f667c67cf99, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4677282934416044, guid: cdf32dfcd615742489d82f667c67cf99, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4677282934416044, guid: cdf32dfcd615742489d82f667c67cf99, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4677282934416044, guid: cdf32dfcd615742489d82f667c67cf99, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: cdf32dfcd615742489d82f667c67cf99, type: 2}
   m_IsPrefabParent: 0
