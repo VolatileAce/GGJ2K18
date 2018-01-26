@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class LoseScreen : MonoBehaviour
 {
-    private Text MessageText;
+    //private Text MessageText;
 
     void Awake()
     {
-        MessageText = GetComponentInChildren<Text>();
+        //MessageText = GetComponentInChildren<Text>();
     }
 
 	// Use this for initialization
