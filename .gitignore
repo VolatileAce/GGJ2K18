@@ -1,9 +1,9 @@
-/[Ll]ibrary/
-/[Tt]emp/
-/[Oo]bj/
-/[Bb]uild/
-/[Bb]uilds/
-/Assets/AssetStoreTools*
+GameJam2018/[Ll]ibrary/
+GameJam2018/[Tt]emp/
+GameJam2018/[Oo]bj/
+GameJam2018/[Bb]uild/
+GameJam2018/[Bb]uilds/
+GameJam2018/Assets/AssetStoreTools*
 
 # Visual Studio 2015 cache directory
 /.vs/
@@ -32,5 +32,3 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
-GameJam2018/Library/
-GameJam2018/Temp/
