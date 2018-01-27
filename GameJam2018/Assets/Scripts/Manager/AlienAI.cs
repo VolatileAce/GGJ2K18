@@ -101,6 +101,11 @@ public class AlienAI : MonoBehaviour
 
     private Dictionary<int, bool> VisibilityTable = new Dictionary<int, bool>();
 
+    public void ScheduleRequets(int in_Requests = 3)
+    {
+
+    }
+
     public void Randomize()
     {
         var armLimbs = gameObject.GetComponentsInChildren<AlienArmLimb>();
