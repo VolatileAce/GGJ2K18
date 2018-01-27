@@ -35,6 +35,7 @@ public class HeatingManager : MonoBehaviour
     void Awake()
     {
         Instance = this;
+        Heat = new Heat(50, 0);
     }
 
     // Use this for initialization
