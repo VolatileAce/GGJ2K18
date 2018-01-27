@@ -33,4 +33,13 @@ public class AtmosphereManager : MonoBehaviour
         }
     }
 
+    public void SetGas(Gas in_gas)
+    {
+        foreach (Gas gas in AllGases)
+        {
+            if (gas.GasType.Equals(in_gas.GasType))
+                gas.Percentage = in_gas.Percentage;
+        }
+    }
+
 }
