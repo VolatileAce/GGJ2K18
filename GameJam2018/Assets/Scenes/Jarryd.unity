@@ -590,21 +590,19 @@ MonoBehaviour:
   DebugMusicText: {fileID: 2015763872}
   DebugAtmosphereText: {fileID: 1116276545}
   DebugUberText: {fileID: 308694508}
-  NamePrefix:
-  - Mee
-  - Cronen
-  - Gromfla
-  - Hu
-  - Gazor
-  - Butter
-  NamePostfix:
-  - seek
-  - berg
-  - mite
-  - man
-  - pian
-  - ions
+  AlienSkinMaterial: {fileID: 0}
+  SkinRed: {r: 0, g: 0, b: 0, a: 0}
+  SkinBlue: {r: 0, g: 0, b: 0, a: 0}
+  SkinGreen: {r: 0, g: 0, b: 0, a: 0}
   AllLimbs: []
+  Max_EyeStalks: 2
+  Max_EyeBalls: 2
+  Max_Arms: 4
+  Max_Tentacles: 4
+  Max_Warts: 2
+  Max_Mouths: 2
+  Max_Antennae: 2
+  Max_Ears: 2
 --- !u!4 &580233399
 Transform:
   m_ObjectHideFlags: 0
@@ -1214,6 +1212,56 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 0426b9bb77193f647b2472a7c25dc218, type: 2}
+    - target: {fileID: 114836551626130878, guid: 0d5df335e671d3b4ba09e311078bb682,
+        type: 2}
+      propertyPath: AlienSkinMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: da1e656b09a07a4438ab9258948a7b02, type: 2}
+    - target: {fileID: 114836551626130878, guid: 0d5df335e671d3b4ba09e311078bb682,
+        type: 2}
+      propertyPath: SkinRed.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114836551626130878, guid: 0d5df335e671d3b4ba09e311078bb682,
+        type: 2}
+      propertyPath: SkinRed.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114836551626130878, guid: 0d5df335e671d3b4ba09e311078bb682,
+        type: 2}
+      propertyPath: SkinRed.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114836551626130878, guid: 0d5df335e671d3b4ba09e311078bb682,
+        type: 2}
+      propertyPath: SkinBlue.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114836551626130878, guid: 0d5df335e671d3b4ba09e311078bb682,
+        type: 2}
+      propertyPath: SkinBlue.g
+      value: 0.04827571
+      objectReference: {fileID: 0}
+    - target: {fileID: 114836551626130878, guid: 0d5df335e671d3b4ba09e311078bb682,
+        type: 2}
+      propertyPath: SkinBlue.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114836551626130878, guid: 0d5df335e671d3b4ba09e311078bb682,
+        type: 2}
+      propertyPath: SkinGreen.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114836551626130878, guid: 0d5df335e671d3b4ba09e311078bb682,
+        type: 2}
+      propertyPath: SkinGreen.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114836551626130878, guid: 0d5df335e671d3b4ba09e311078bb682,
+        type: 2}
+      propertyPath: SkinGreen.b
+      value: 0.17241383
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0d5df335e671d3b4ba09e311078bb682, type: 2}
   m_IsPrefabParent: 0
