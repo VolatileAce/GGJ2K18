@@ -134,12 +134,13 @@ public class AlienAI : MonoBehaviour
         foreach (var ele in armLimbs)
         {
             if (ele.LocationID != 0)
-                VisibilityTable.Add(ele.LocationID, false);
+                if (!VisibilityTable.ContainsKey(ele.LocationID))
+                    VisibilityTable.Add(ele.LocationID, false);
 
             if (!ArmMaxes.ContainsKey(ele.Limb))
                 ArmMaxes.Add(ele.Limb, 0);
 
-            ArmMaxes[ele.Limb]++;            
+            ArmMaxes[ele.Limb]++;
         }
 
         int seed = System.DateTime.Now.Millisecond + System.DateTime.Now.Minute + System.DateTime.Now.Hour;
@@ -181,9 +182,26 @@ public class AlienAI : MonoBehaviour
         //Now we set up the rendering of the alien to match!
         foreach (var ele in armLimbs)
         {
+            if (!ele.gameObject.active)
+                continue;
+
+            if (ele.LocationID != 0)
+                if (VisibilityTable[(ele.LocationID)])
+                {
+                    ele.gameObject.SetActive(false);
+                    continue;
+                }
+
             if (ArmLimbCount[ele.Limb] <= 0)
                 ele.gameObject.SetActive(false);
-            ArmLimbCount[ele.Limb]--;
+            else
+            {
+                //Disable any arms occupying the same slot
+                if (ele.LocationID != 0)
+                    VisibilityTable[ele.LocationID] = true;
+
+                ArmLimbCount[ele.Limb]--;
+            }
         }
 
         foreach (var ele in headLimbs)
