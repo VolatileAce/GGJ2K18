@@ -14,9 +14,18 @@ public enum TorsoLimbType
     MAX_TYPES
 }
 
+public enum LimbSide
+{
+    Center,
+    Left,
+    Right
+}
+
 public class AlienTorsoLimb : AlienLimb
 {
     public TorsoLimbType Limb;
+    public LimbSide Side;
+
     public override LimbLocation Location
     {
         get
