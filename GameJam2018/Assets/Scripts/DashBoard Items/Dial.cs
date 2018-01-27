@@ -50,6 +50,7 @@ public class Dial : Slider {
         LightMatInstance.color = ClickedColor;
         lastChangeTime = Time.time;
         hasChangedColor = false;
+        CurrentValue = newValue;
         OnValueChanged.Invoke(newValue);
     }
 

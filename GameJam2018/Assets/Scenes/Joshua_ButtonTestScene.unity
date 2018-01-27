@@ -711,6 +711,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+  EffectTime: 0.75
 --- !u!1 &322732565
 GameObject:
   m_ObjectHideFlags: 0
@@ -1702,7 +1703,7 @@ Prefab:
     - target: {fileID: 114624902846378480, guid: e7212249bda86b64fa2964d67803a849,
         type: 2}
       propertyPath: OnValueChanged.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114790101077856730, guid: e7212249bda86b64fa2964d67803a849,
         type: 2}
@@ -1775,7 +1776,7 @@ Prefab:
         type: 2}
       propertyPath: OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1870788469}
+      objectReference: {fileID: 768675333}
     - target: {fileID: 114236078817846852, guid: e7212249bda86b64fa2964d67803a849,
         type: 2}
       propertyPath: OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -1815,7 +1816,7 @@ Prefab:
         type: 2}
       propertyPath: OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 502987342}
+      objectReference: {fileID: 1408328552}
     - target: {fileID: 114692256515782468, guid: e7212249bda86b64fa2964d67803a849,
         type: 2}
       propertyPath: OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -2045,17 +2046,17 @@ Prefab:
         type: 2}
       propertyPath: OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 502987342}
+      objectReference: {fileID: 1481703776}
     - target: {fileID: 114624902846378480, guid: e7212249bda86b64fa2964d67803a849,
         type: 2}
       propertyPath: OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 502987342}
+      objectReference: {fileID: 73125428}
     - target: {fileID: 114135394987077776, guid: e7212249bda86b64fa2964d67803a849,
         type: 2}
       propertyPath: OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 502987342}
+      objectReference: {fileID: 1857939023}
     - target: {fileID: 114945306365474572, guid: e7212249bda86b64fa2964d67803a849,
         type: 2}
       propertyPath: OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
