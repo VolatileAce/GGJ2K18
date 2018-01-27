@@ -38,15 +38,8 @@ public class HeatingManager : MonoBehaviour
         Heat = new Heat(50, 0);
     }
 
-    // Use this for initialization
-    void Start ()
+    public static void SetHeatDegrees(float in_Degrees)
     {
-		
-	}
-	
-	// Update is called once per frame
-	void Update ()
-    {
-		
-	}
+        Instance.Heat.TemperatureDegrees = in_Degrees;
+    }
 }

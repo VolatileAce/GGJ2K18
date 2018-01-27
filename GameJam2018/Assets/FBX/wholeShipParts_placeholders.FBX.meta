@@ -1,0 +1,201 @@
+fileFormatVersion: 2
+guid: 67db87e1667b2674cb833c89ca31685a
+timeCreated: 1517045093
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: Box003
+    100002: Box004
+    100004: Box005
+    100006: Camera001
+    100008: glassShip
+    100010: Group001
+    100012: pal_silver_Button012
+    100014: pal_silver_Button013
+    100016: pal_silver_Button014
+    100018: pal_silver_Button015
+    100020: pal_silver_Button016
+    100022: pal_silver_Button017
+    100024: pal_silver_Button018
+    100026: pal_silver_Button019
+    100028: pal_silverBox_Slider018
+    100030: pal_silverBox_Slider019
+    100032: pal_silverBox_Slider020
+    100034: pal_silverBox_Slider021
+    100036: pal_silverBox_Slider022
+    100038: pal_silverBox_Slider023
+    100040: panelDials
+    100042: screenLegs
+    100044: screenLegs001
+    100046: ship
+    100048: //RootNode
+    400000: Box003
+    400002: Box004
+    400004: Box005
+    400006: Camera001
+    400008: glassShip
+    400010: Group001
+    400012: pal_silver_Button012
+    400014: pal_silver_Button013
+    400016: pal_silver_Button014
+    400018: pal_silver_Button015
+    400020: pal_silver_Button016
+    400022: pal_silver_Button017
+    400024: pal_silver_Button018
+    400026: pal_silver_Button019
+    400028: pal_silverBox_Slider018
+    400030: pal_silverBox_Slider019
+    400032: pal_silverBox_Slider020
+    400034: pal_silverBox_Slider021
+    400036: pal_silverBox_Slider022
+    400038: pal_silverBox_Slider023
+    400040: panelDials
+    400042: screenLegs
+    400044: screenLegs001
+    400046: ship
+    400048: //RootNode
+    2000000: Camera001
+    2300000: Box003
+    2300002: Box004
+    2300004: Box005
+    2300006: glassShip
+    2300008: pal_silver_Button012
+    2300010: pal_silver_Button013
+    2300012: pal_silver_Button014
+    2300014: pal_silver_Button015
+    2300016: pal_silver_Button016
+    2300018: pal_silver_Button017
+    2300020: pal_silver_Button018
+    2300022: pal_silver_Button019
+    2300024: pal_silverBox_Slider018
+    2300026: pal_silverBox_Slider019
+    2300028: pal_silverBox_Slider020
+    2300030: pal_silverBox_Slider021
+    2300032: pal_silverBox_Slider022
+    2300034: pal_silverBox_Slider023
+    2300036: panelDials
+    2300038: screenLegs
+    2300040: screenLegs001
+    2300042: ship
+    3300000: Box003
+    3300002: Box004
+    3300004: Box005
+    3300006: glassShip
+    3300008: pal_silver_Button012
+    3300010: pal_silver_Button013
+    3300012: pal_silver_Button014
+    3300014: pal_silver_Button015
+    3300016: pal_silver_Button016
+    3300018: pal_silver_Button017
+    3300020: pal_silver_Button018
+    3300022: pal_silver_Button019
+    3300024: pal_silverBox_Slider018
+    3300026: pal_silverBox_Slider019
+    3300028: pal_silverBox_Slider020
+    3300030: pal_silverBox_Slider021
+    3300032: pal_silverBox_Slider022
+    3300034: pal_silverBox_Slider023
+    3300036: panelDials
+    3300038: screenLegs
+    3300040: screenLegs001
+    3300042: ship
+    4300000: ship
+    4300002: panelDials
+    4300004: Box003
+    4300006: Box004
+    4300008: Box005
+    4300010: pal_silverBox_Slider022
+    4300012: pal_silverBox_Slider020
+    4300014: pal_silverBox_Slider021
+    4300016: pal_silverBox_Slider018
+    4300018: pal_silverBox_Slider019
+    4300020: pal_silver_Button015
+    4300022: pal_silver_Button016
+    4300024: pal_silver_Button014
+    4300026: pal_silver_Button012
+    4300028: pal_silver_Button019
+    4300030: pal_silver_Button018
+    4300032: pal_silver_Button017
+    4300034: pal_silver_Button013
+    4300036: pal_silverBox_Slider023
+    4300038: screenLegs
+    4300040: screenLegs001
+    4300042: glassShip
+    7400000: Take 001
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
