@@ -33,6 +33,11 @@ public class ScoreManager : MonoBehaviour
             UberRating = 5;
     }
 
+    public static void EvaluateWinCondition()
+    {
+
+    }
+
 	// Use this for initialization
 	void Start ()
     {
