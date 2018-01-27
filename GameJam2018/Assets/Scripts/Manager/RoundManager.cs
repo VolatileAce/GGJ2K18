@@ -35,12 +35,16 @@ public class RoundManager : MonoBehaviour
     public Dictionary<UserSpaceState, int> StateDurations = new Dictionary<UserSpaceState, int>();
     
     public UserSpaceState CurrentGameState = UserSpaceState.NULL;
+
     public int PickupTimeMin = 30;
     public int PickupTimeMax = 60;
 
     public int TransportTimeMin = 30;
     public int TransportTimeMax = 60;
 
+    public int DestinationTimeMin = 30;
+    public int DestinationTimeMax = 60;
+    
     [HideInInspector]
     public Stopwatch RoundTimer;
     [HideInInspector]
@@ -53,6 +57,7 @@ public class RoundManager : MonoBehaviour
     {
         CurrentGameState = in_NewState;
         StateText.text = CurrentGameState.ToString().Replace('_', ' ');
+        RoundTimer = Stopwatch.StartNew();
     }
 
     void Awake()
@@ -61,9 +66,9 @@ public class RoundManager : MonoBehaviour
         Random.InitState(seed);
 
         StateDurations.Add(UserSpaceState.Pickup, Random.Range(PickupTimeMin, PickupTimeMax));
-        StateDurations.Add(UserSpaceState.Transport, Random.Range(TransportTimeMin, TransportTimeMax));        
-        
-        RoundTimer = Stopwatch.StartNew();
+        StateDurations.Add(UserSpaceState.Transport, Random.Range(TransportTimeMin, TransportTimeMax));
+        StateDurations.Add(UserSpaceState.Destination, Random.Range(DestinationTimeMin, DestinationTimeMax));
+
         ChangeState(UserSpaceState.Pickup);
     }
 
@@ -91,6 +96,16 @@ public class RoundManager : MonoBehaviour
                 {
                     ChangeState(UserSpaceState.Destination);
                     ScoreManager.EvaluateWinCondition();
+                    ScoreManager.Instance.ShowReceiptScreen();
+                }
+                break;
+
+            case UserSpaceState.Destination:
+                if (remainingTimeInState <= 0)
+                {
+                    ChangeState(UserSpaceState.Pickup);
+                    ScoreManager.Instance.HideReceiptScreen(); 
+                    AlienAI.Instance.Randomize();
                 }
                 break;
         }

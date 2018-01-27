@@ -3,6 +3,34 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
+/// <summary>
+/// Request that are passed grant large bonuses to rating
+/// </summary>
+public class AlienRequest
+{
+    public System.TimeSpan TimeUntilActivation;
+    public float SecondsAllowed;
+
+    public AlienRequest(float in_SecondsUntilActivation, float in_SecondsAllowed)
+    {
+        TimeUntilActivation = System.TimeSpan.FromSeconds(in_SecondsUntilActivation);
+        SecondsAllowed = in_SecondsAllowed;
+    }
+}
+
+
+public class RadioRequest : AlienRequest
+{
+    public Radio MyRadio;
+
+    public RadioRequest(Radio in_Radio, float in_SecondsUntilActivation, float in_SecondsAllowed)
+        : base(in_SecondsUntilActivation, in_SecondsAllowed)
+    {
+        MyRadio = in_Radio;
+    }
+}
+
+
 public class AlienRequirements
 {
     /// <summary>
