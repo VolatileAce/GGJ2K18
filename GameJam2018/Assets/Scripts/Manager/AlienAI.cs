@@ -90,14 +90,12 @@ public class AlienAI : MonoBehaviour
         Requirements = new AlienRequirements(this);
     }
 
-    public int Max_EyeStalks = 2;
-    public int Max_EyeBalls = 2;
-    public int Max_Arms = 4;
-    public int Max_Tentacles = 4;
-    public int Max_Warts = 2;
-    public int Max_Mouths = 2;
-    public int Max_Antennae = 2;
-    public int Max_Ears = 2;
+    private Dictionary<HeadLimbType, int> HeadMaxes = new Dictionary<HeadLimbType, int>();
+    private Dictionary<ArmLimbType, int> ArmMaxes = new Dictionary<ArmLimbType, int>();
+
+    public Dictionary<HeadLimbType, int> HeadLimbCount = new Dictionary<HeadLimbType, int>();
+    public Dictionary<ArmLimbType, int> ArmLimbCount = new Dictionary<ArmLimbType, int>();
+
 
     public TorsoLimbType TorsoColor;
 
@@ -115,27 +113,10 @@ public class AlienAI : MonoBehaviour
                 if (VisibilityTable.ContainsKey(ele.LocationID))
                     VisibilityTable.Add(ele.LocationID, false);
 
-            switch (ele.Limb)
-            {
-                case HeadLimbType.Antennae:
-                    Max_Antennae++;
-                    break;
-                case HeadLimbType.Ears:
-                    Max_Ears++;
-                    break;
-                case HeadLimbType.EyeBalls:
-                    Max_EyeBalls++;
-                    break;
-                case HeadLimbType.Eye_Stalk:
-                    Max_EyeStalks++;
-                    break;
-                case HeadLimbType.Mouth:
-                    Max_Mouths++;
-                    break;
-                case HeadLimbType.Warts:
-                    Max_Warts++;
-                    break;
-            }
+            if (!HeadMaxes.ContainsKey(ele.Limb))
+                HeadMaxes.Add(ele.Limb, 0);
+
+            HeadMaxes[ele.Limb]++;
         }
 
         foreach (var ele in armLimbs)
@@ -143,18 +124,11 @@ public class AlienAI : MonoBehaviour
             if (ele.LocationID != 0)
                 VisibilityTable.Add(ele.LocationID, false);
 
-            switch (ele.Limb)
-            {
-                case ArmLimbType.Robot:
-                    Max_Arms++;
-                    break;
+            if (!ArmMaxes.ContainsKey(ele.Limb))
+                ArmMaxes.Add(ele.Limb, 0);
 
-                case ArmLimbType.Tentacle:
-                    Max_Tentacles++;
-                    break;
-            }
+            ArmMaxes[ele.Limb]++;            
         }
-
 
         int seed = System.DateTime.Now.Millisecond + System.DateTime.Now.Minute + System.DateTime.Now.Hour;
         Random.InitState( seed);
@@ -182,33 +156,22 @@ public class AlienAI : MonoBehaviour
                 break;
         }
 
-        int eyeStalks = Random.Range(0, Max_EyeStalks);
-        int eyeballs = Random.Range(0, Max_EyeBalls);
-        int arms = Random.Range(0, Max_Arms);
-        int ears = Random.Range(0, Max_Ears);
-        int tentacles = Random.Range(0, Max_Tentacles);
-        int warts = Random.Range(0, Max_Warts);
-        int mouths = Random.Range(0, Max_Mouths);
-        int antennae = Random.Range(0, Max_Antennae);
+        HeadLimbCount.Add(HeadLimbType.Eye_Stalk, Random.Range(0, HeadMaxes[HeadLimbType.Eye_Stalk]));
+        HeadLimbCount.Add(HeadLimbType.EyeBalls, Random.Range(0, HeadMaxes[HeadLimbType.EyeBalls]));
+        HeadLimbCount.Add(HeadLimbType.Ears, Random.Range(0, HeadMaxes[HeadLimbType.Ears]));
+        HeadLimbCount.Add(HeadLimbType.Warts, Random.Range(0, HeadMaxes[HeadLimbType.Warts]));
+        HeadLimbCount.Add(HeadLimbType.Mouth, Random.Range(0, HeadMaxes[HeadLimbType.Mouth]));
+        HeadLimbCount.Add(HeadLimbType.Antennae, Random.Range(0, HeadMaxes[HeadLimbType.Antennae]));
 
-        
+        ArmLimbCount.Add(ArmLimbType.Robot, Random.Range(0, ArmMaxes[ArmLimbType.Robot]));
+        ArmLimbCount.Add(ArmLimbType.Tentacle, Random.Range(0, ArmMaxes[ArmLimbType.Tentacle]));
+
         //Now we set up the rendering of the alien to match!
         foreach (var ele in armLimbs)
         {
-            switch(ele.Limb)
-            {
-                case ArmLimbType.Robot:
-                    if (arms <= 0)
-                        ele.gameObject.SetActive(false);
-                    arms--;
-                    break;
-
-                case ArmLimbType.Tentacle:
-                    if (tentacles <= 0)
-                        ele.gameObject.SetActive(false);
-                    tentacles--;
-                    break;
-            }
+            if (ArmLimbCount[ele.Limb] <= 0)
+                ele.gameObject.SetActive(false);
+            ArmLimbCount[ele.Limb]--;
         }
 
         foreach (var ele in headLimbs)
@@ -225,22 +188,15 @@ public class AlienAI : MonoBehaviour
 
             switch (ele.Limb)
             {
-                case HeadLimbType.Antennae:
-                    if (antennae <= 0)
+                default:
+                    if (HeadLimbCount[ele.Limb] <= 0)
                         ele.gameObject.SetActive(false);
                     else
-                        antennae--;
-                    break;
-
-                case HeadLimbType.Ears:
-                    if (ears <= 0)
-                        ele.gameObject.SetActive(false);
-                    else
-                        ears--;
+                        HeadLimbCount[ele.Limb]--;
                     break;
 
                 case HeadLimbType.EyeBalls:
-                    if (eyeballs <= 0)
+                    if (HeadLimbCount[ele.Limb] <= 0)
                         ele.gameObject.SetActive(false);
                     else
                     {
@@ -248,33 +204,20 @@ public class AlienAI : MonoBehaviour
                         if (ele.LocationID != 0)
                             VisibilityTable.Add(ele.LocationID, true);
                     }
-
-                    eyeballs--;
+                    HeadLimbCount[ele.Limb]--;
                     break;
+
                 case HeadLimbType.Eye_Stalk:
-                    if (eyeStalks <= 0)
+                    if (HeadLimbCount[ele.Limb] <= 0)
                         ele.gameObject.SetActive(false);
                     else
                     {
                         //Disable any eye balls occupying the same slot
                         if (ele.LocationID != 0)
                             VisibilityTable.Add(ele.LocationID, true);
-                        eyeStalks--;
+                        HeadLimbCount[ele.Limb]--;
                     }
-
-                    break;
-                case HeadLimbType.Mouth:
-                    if (mouths <= 0)
-                        ele.gameObject.SetActive(false);
-                    else
-                        mouths--;
-                    break;
-                case HeadLimbType.Warts:
-                    if (warts <= 0)
-                        ele.gameObject.SetActive(false);
-                    else
-                        warts--;
-                    break;
+                    break;                 
             }
         }
     }
