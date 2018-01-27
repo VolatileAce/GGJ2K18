@@ -7,8 +7,9 @@ public enum TorsoLimbType
 {
     Null,
 
-    Lizard_Torso,
-    Xenomorph_Torso,
+    Red,
+    Blue,
+    Green,
 
     MAX_TYPES
 }

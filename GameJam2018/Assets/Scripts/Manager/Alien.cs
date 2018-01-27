@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary>
 /// Which placement point on the alien
@@ -27,14 +28,6 @@ public enum AlienGalacticHome
     MAX_TYPES
 }
 
-/// <summary>
-/// an asset and location to place on the alien
-/// </summary>
-[System.Serializable]
-public class AlienLimb : MonoBehaviour
-{
-    public virtual LimbLocation Location { get { return LimbLocation.Null; } }    
-}
 
 /// <summary>
 /// Randomized passenger with both initial, and ongoing requirements
@@ -42,6 +35,13 @@ public class AlienLimb : MonoBehaviour
 public class Alien : MonoBehaviour
 {
     public string RacialName = "Alien";
+    public AlienRequirements Requirements;
+    public AlienGalacticHome GalacticHome;
+
+    public Text DebugHeatText;
+    public Text DebugMusicText;
+    public Text DebugAtmosphereText;
+    public Text DebugUberText;
 
     private List<string> NamePrefix = new List<string>()
     {
@@ -67,37 +67,22 @@ public class Alien : MonoBehaviour
 
     public AlienLimb GetLimb(LimbLocation in_Type)
     {
-        foreach (var limb in AllLimbs)
-        {
+        foreach (var limb in AllLimbs)        
             if (limb.Location.Equals(in_Type))
-                return limb;
-        }
+                return limb;       
 
         return null;
     }    
-
     public void RegenerateRacialName()
     {
         RacialName = NamePrefix[(int)Random.Range(0, NamePrefix.Count)] + NamePostfix[(int)Random.Range(0, NamePostfix.Count)];        
     }
-
-    public AlienGalacticHome GalacticHome;
-
-
-    /// <summary>
-    /// The gas required to be happy and survive
-    /// </summary>
-    public Gas BreathableAtmosphere;
-
-    /// <summary>
-    /// The gas that creates unhappiness and death
-    /// </summary>
-    public Gas ToxicAtmosphere;
-
+        
     // Use this for initialization
     void Start()
     {
         Randomize();
+        Requirements = new AlienRequirements(this);
     }
 
     public void Randomize()
@@ -121,31 +106,33 @@ public class Alien : MonoBehaviour
         var hats = gameObject.GetComponentsInChildren<AlienHatLimb>();
 
         foreach (var ele in torsos)
+        {
             if (ele.Limb != Torso)
                 ele.gameObject.SetActive(false);
+            else
+                AllLimbs.Add(ele);
+        }
 
         foreach (var ele in arms)
+        {
             if (ele.Limb != Arms)
                 ele.gameObject.SetActive(false);
+            else
+                AllLimbs.Add(ele);
+        }
 
         foreach (var ele in hats)
+        {
             if (ele.Limb != Hat)
                 ele.gameObject.SetActive(false);
+            else
+                AllLimbs.Add(ele);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        var goodGas = AtmosphereManager.GetGas(this.BreathableAtmosphere.GasType);
-        var badGas = AtmosphereManager.GetGas(this.ToxicAtmosphere.GasType);
-
-        float breathableTolerance = 0.1f;
-
-        if (goodGas.GasType != GasType.Null)        
-            if (Mathf.Abs(goodGas.Percentage - BreathableAtmosphere.Percentage) < breathableTolerance)
-                ScoreManager.ImproveUberRating(breathableTolerance * Time.deltaTime);        
-
-        if (badGas.GasType != GasType.Null)        
-            ScoreManager.DamageUberRating(badGas.Percentage * Time.deltaTime);    
+        Requirements.Evaluate();
     }
 }
