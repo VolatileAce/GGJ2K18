@@ -8,7 +8,7 @@ public enum ArmLimbType
     Null,
 
     Tentacle,
-    Humanoid,
+    Robot,
 
     MAX_TYPES
 }

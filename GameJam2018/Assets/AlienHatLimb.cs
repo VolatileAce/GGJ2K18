@@ -3,20 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public enum HatLimbType
+public enum HeadLimbType
 {
     Null,
 
     Eye_Stalk,
-    Horns,
+    Warts,
+    EyeBalls,
+    Mouth,
+    Antennae,
 
     MAX_TYPES
 }
 
 
-public class AlienHatLimb : AlienLimb
+public class AlienHeadLimb : AlienLimb
 {
-    public HatLimbType Limb;
+    public HeadLimbType Limb;
     public override LimbLocation Location
     {
         get
@@ -25,7 +28,7 @@ public class AlienHatLimb : AlienLimb
         }
     }
 
-    public AlienHatLimb(HatLimbType in_Limb)
+    public AlienHeadLimb(HeadLimbType in_Limb)
     {
         Limb = in_Limb;
     }

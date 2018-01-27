@@ -30,13 +30,13 @@ public class AlienRequirements
     /// </summary>
     public Heat LikedHeat;
 
-    public Alien MyAlien;
+    public AlienAI MyAlien;
 
     /// <summary>
     /// Initialize the preferences based on the appearance of the alien
     /// </summary>
     /// <param name="in_Alien"></param>
-    public AlienRequirements(Alien in_Alien)
+    public AlienRequirements(AlienAI in_Alien)
     {
         MyAlien = in_Alien;
 

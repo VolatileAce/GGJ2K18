@@ -32,7 +32,7 @@ public enum AlienGalacticHome
 /// <summary>
 /// Randomized passenger with both initial, and ongoing requirements
 /// </summary>
-public class Alien : MonoBehaviour
+public class AlienAI : MonoBehaviour
 {
     public string RacialName = "Alien";
     public AlienRequirements Requirements;
@@ -85,6 +85,14 @@ public class Alien : MonoBehaviour
         Requirements = new AlienRequirements(this);
     }
 
+    public int Max_EyeStalks = 2;
+    public int Max_EyeBalls = 2;
+    public int Max_Arms = 4;
+    public int Max_Tentacles = 4;
+    public int Max_Warts = 2;
+    public int Max_Mouths = 2;
+    public int Max_Atnennae = 2;
+
     public void Randomize()
     {
         int seed = System.DateTime.Now.Millisecond + System.DateTime.Now.Minute + System.DateTime.Now.Hour;
@@ -98,12 +106,12 @@ public class Alien : MonoBehaviour
         //Randomize the limbs
         TorsoLimbType Torso = (TorsoLimbType)Random.Range((int)1, (int)TorsoLimbType.MAX_TYPES );        
         ArmLimbType Arms = ((ArmLimbType)Random.Range((int)1, (int)ArmLimbType.MAX_TYPES ));        
-        HatLimbType Hat = ((HatLimbType)Random.Range((int)1, (int)HatLimbType.MAX_TYPES ));
+        HeadLimbType Hat = ((HeadLimbType)Random.Range((int)1, (int)HeadLimbType.MAX_TYPES ));
 
         //Now we set up the rendering of the alien to match!
         var torsos = gameObject.GetComponentsInChildren<AlienTorsoLimb>();
         var arms = gameObject.GetComponentsInChildren<AlienArmLimb>();
-        var hats = gameObject.GetComponentsInChildren<AlienHatLimb>();
+        var hats = gameObject.GetComponentsInChildren<AlienHeadLimb>();
 
         foreach (var ele in torsos)
         {
