@@ -99,11 +99,12 @@ public class AlienAI : MonoBehaviour
     public int Max_Antennae = 2;
     public int Max_Ears = 2;
 
+    public TorsoLimbType TorsoColor;
+
     private Dictionary<int, bool> VisibilityTable = new Dictionary<int, bool>();
 
     public void Randomize()
     {
-        var torso = gameObject.GetComponentInChildren<AlienTorsoLimb>();
         var armLimbs = gameObject.GetComponentsInChildren<AlienArmLimb>();
         var headLimbs = gameObject.GetComponentsInChildren<AlienHeadLimb>();
 
@@ -164,9 +165,9 @@ public class AlienAI : MonoBehaviour
         GalacticHome = (AlienGalacticHome)Random.Range((int)0, (int)TorsoLimbType.MAX_TYPES);
 
         //Randomize the skin color
-        TorsoLimbType Torso = (TorsoLimbType)Random.Range((int)1, (int)TorsoLimbType.MAX_TYPES );
+        TorsoColor = (TorsoLimbType)Random.Range((int)1, (int)TorsoLimbType.MAX_TYPES );
 
-        switch(Torso)
+        switch(TorsoColor)
         {
             case TorsoLimbType.Blue:
                 AlienSkinMaterial.color = SkinBlue;
@@ -190,9 +191,7 @@ public class AlienAI : MonoBehaviour
         int mouths = Random.Range(0, Max_Mouths);
         int antennae = Random.Range(0, Max_Antennae);
 
-
-        AllLimbs.Add(torso);
-
+        
         //Now we set up the rendering of the alien to match!
         foreach (var ele in armLimbs)
         {

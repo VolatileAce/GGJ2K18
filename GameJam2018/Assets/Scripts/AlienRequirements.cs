@@ -49,7 +49,7 @@ public class AlienRequirements
         LikedHeat = new Heat(20, 5);
 
 
-        switch (((AlienTorsoLimb)MyAlien.GetLimb(LimbLocation.Torso)).Limb)
+        switch (MyAlien.TorsoColor)
         {
             case TorsoLimbType.Red:
                 LikedHeat.TemperatureDegrees = HeatingManager.Instance.MinTemperature;
