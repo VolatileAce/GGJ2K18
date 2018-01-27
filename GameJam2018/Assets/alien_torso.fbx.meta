@@ -1,0 +1,443 @@
+fileFormatVersion: 2
+guid: 338502fd4134c4d489c50ad0411a7d47
+timeCreated: 1517022516
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: arm_hole_1
+    100004: arm_hole_1 1
+    100006: arm_hole_2
+    100008: arm_hole_2 1
+    100010: arm_hole_3
+    100012: arm_hole_3 1
+    100014: arm_hole_4
+    100016: arm_hole_4 1
+    100018: arm_hole_5
+    100020: arm_hole_5 1
+    100022: arm_hole_6
+    100024: arm_hole_6 1
+    100026: arm_hole_7
+    100028: arm_hole_7 1
+    100030: arm_holes_L
+    100032: arm_holes_R
+    100034: belt_and_neck
+    100036: butt
+    100038: ear_L_1
+    100040: ear_L_2
+    100042: ear_L_3
+    100044: ear_L_4
+    100046: ear_L_5
+    100048: ear_R_1
+    100050: ear_R_2
+    100052: ear_R_3
+    100054: ear_R_4
+    100056: ear_R_5
+    100058: ears_L
+    100060: ears_R
+    100062: eye_L_1
+    100064: eye_L_2
+    100066: eye_L_3
+    100068: eye_L_4
+    100070: eye_L_5
+    100072: eye_R_1
+    100074: eye_R_2
+    100076: eye_R_3
+    100078: eye_R_4
+    100080: eye_R_5
+    100082: eye_stalk_ball_L_1
+    100084: eye_stalk_ball_L_2
+    100086: eye_stalk_ball_L_3
+    100088: eye_stalk_ball_L_4
+    100090: eye_stalk_ball_L_5
+    100092: eye_stalk_ball_R_1
+    100094: eye_stalk_ball_R_2
+    100096: eye_stalk_ball_R_3
+    100098: eye_stalk_ball_R_4
+    100100: eye_stalk_ball_R_5
+    100102: eye_stalk_L_1
+    100104: eye_stalk_L_2
+    100106: eye_stalk_L_3
+    100108: eye_stalk_L_4
+    100110: eye_stalk_L_5
+    100112: eye_stalk_R_1
+    100114: eye_stalk_R_2
+    100116: eye_stalk_R_3
+    100118: eye_stalk_R_4
+    100120: eye_stalk_R_5
+    100122: eye_stalks_L
+    100124: eye_stalks_R
+    100126: eyes_L
+    100128: eyes_R
+    100130: head
+    100132: mouth_1
+    100134: mouth_2
+    100136: mouth_3
+    100138: torso
+    100140: wart_L_1
+    100142: wart_L_2
+    100144: wart_L_3
+    100146: wart_L_4
+    100148: wart_R_1
+    100150: wart_R_2
+    100152: wart_R_3
+    100154: wart_R_4
+    100156: warts_L
+    100158: warts_R
+    400000: //RootNode
+    400002: arm_hole_1
+    400004: arm_hole_1 1
+    400006: arm_hole_2
+    400008: arm_hole_2 1
+    400010: arm_hole_3
+    400012: arm_hole_3 1
+    400014: arm_hole_4
+    400016: arm_hole_4 1
+    400018: arm_hole_5
+    400020: arm_hole_5 1
+    400022: arm_hole_6
+    400024: arm_hole_6 1
+    400026: arm_hole_7
+    400028: arm_hole_7 1
+    400030: arm_holes_L
+    400032: arm_holes_R
+    400034: belt_and_neck
+    400036: butt
+    400038: ear_L_1
+    400040: ear_L_2
+    400042: ear_L_3
+    400044: ear_L_4
+    400046: ear_L_5
+    400048: ear_R_1
+    400050: ear_R_2
+    400052: ear_R_3
+    400054: ear_R_4
+    400056: ear_R_5
+    400058: ears_L
+    400060: ears_R
+    400062: eye_L_1
+    400064: eye_L_2
+    400066: eye_L_3
+    400068: eye_L_4
+    400070: eye_L_5
+    400072: eye_R_1
+    400074: eye_R_2
+    400076: eye_R_3
+    400078: eye_R_4
+    400080: eye_R_5
+    400082: eye_stalk_ball_L_1
+    400084: eye_stalk_ball_L_2
+    400086: eye_stalk_ball_L_3
+    400088: eye_stalk_ball_L_4
+    400090: eye_stalk_ball_L_5
+    400092: eye_stalk_ball_R_1
+    400094: eye_stalk_ball_R_2
+    400096: eye_stalk_ball_R_3
+    400098: eye_stalk_ball_R_4
+    400100: eye_stalk_ball_R_5
+    400102: eye_stalk_L_1
+    400104: eye_stalk_L_2
+    400106: eye_stalk_L_3
+    400108: eye_stalk_L_4
+    400110: eye_stalk_L_5
+    400112: eye_stalk_R_1
+    400114: eye_stalk_R_2
+    400116: eye_stalk_R_3
+    400118: eye_stalk_R_4
+    400120: eye_stalk_R_5
+    400122: eye_stalks_L
+    400124: eye_stalks_R
+    400126: eyes_L
+    400128: eyes_R
+    400130: head
+    400132: mouth_1
+    400134: mouth_2
+    400136: mouth_3
+    400138: torso
+    400140: wart_L_1
+    400142: wart_L_2
+    400144: wart_L_3
+    400146: wart_L_4
+    400148: wart_R_1
+    400150: wart_R_2
+    400152: wart_R_3
+    400154: wart_R_4
+    400156: warts_L
+    400158: warts_R
+    2300000: arm_hole_1
+    2300002: arm_hole_1 1
+    2300004: arm_hole_2
+    2300006: arm_hole_2 1
+    2300008: arm_hole_3
+    2300010: arm_hole_3 1
+    2300012: arm_hole_4
+    2300014: arm_hole_4 1
+    2300016: arm_hole_5
+    2300018: arm_hole_5 1
+    2300020: arm_hole_6
+    2300022: arm_hole_6 1
+    2300024: arm_hole_7
+    2300026: arm_hole_7 1
+    2300028: belt_and_neck
+    2300030: butt
+    2300032: ear_L_1
+    2300034: ear_L_2
+    2300036: ear_L_3
+    2300038: ear_L_4
+    2300040: ear_L_5
+    2300042: ear_R_1
+    2300044: ear_R_2
+    2300046: ear_R_3
+    2300048: ear_R_4
+    2300050: ear_R_5
+    2300052: eye_L_1
+    2300054: eye_L_2
+    2300056: eye_L_3
+    2300058: eye_L_4
+    2300060: eye_L_5
+    2300062: eye_R_1
+    2300064: eye_R_2
+    2300066: eye_R_3
+    2300068: eye_R_4
+    2300070: eye_R_5
+    2300072: eye_stalk_ball_L_1
+    2300074: eye_stalk_ball_L_2
+    2300076: eye_stalk_ball_L_3
+    2300078: eye_stalk_ball_L_4
+    2300080: eye_stalk_ball_L_5
+    2300082: eye_stalk_ball_R_1
+    2300084: eye_stalk_ball_R_2
+    2300086: eye_stalk_ball_R_3
+    2300088: eye_stalk_ball_R_4
+    2300090: eye_stalk_ball_R_5
+    2300092: eye_stalk_L_1
+    2300094: eye_stalk_L_2
+    2300096: eye_stalk_L_3
+    2300098: eye_stalk_L_4
+    2300100: eye_stalk_L_5
+    2300102: eye_stalk_R_1
+    2300104: eye_stalk_R_2
+    2300106: eye_stalk_R_3
+    2300108: eye_stalk_R_4
+    2300110: eye_stalk_R_5
+    2300112: head
+    2300114: mouth_1
+    2300116: mouth_2
+    2300118: mouth_3
+    2300120: torso
+    2300122: wart_L_1
+    2300124: wart_L_2
+    2300126: wart_L_3
+    2300128: wart_L_4
+    2300130: wart_R_1
+    2300132: wart_R_2
+    2300134: wart_R_3
+    2300136: wart_R_4
+    3300000: arm_hole_1
+    3300002: arm_hole_1 1
+    3300004: arm_hole_2
+    3300006: arm_hole_2 1
+    3300008: arm_hole_3
+    3300010: arm_hole_3 1
+    3300012: arm_hole_4
+    3300014: arm_hole_4 1
+    3300016: arm_hole_5
+    3300018: arm_hole_5 1
+    3300020: arm_hole_6
+    3300022: arm_hole_6 1
+    3300024: arm_hole_7
+    3300026: arm_hole_7 1
+    3300028: belt_and_neck
+    3300030: butt
+    3300032: ear_L_1
+    3300034: ear_L_2
+    3300036: ear_L_3
+    3300038: ear_L_4
+    3300040: ear_L_5
+    3300042: ear_R_1
+    3300044: ear_R_2
+    3300046: ear_R_3
+    3300048: ear_R_4
+    3300050: ear_R_5
+    3300052: eye_L_1
+    3300054: eye_L_2
+    3300056: eye_L_3
+    3300058: eye_L_4
+    3300060: eye_L_5
+    3300062: eye_R_1
+    3300064: eye_R_2
+    3300066: eye_R_3
+    3300068: eye_R_4
+    3300070: eye_R_5
+    3300072: eye_stalk_ball_L_1
+    3300074: eye_stalk_ball_L_2
+    3300076: eye_stalk_ball_L_3
+    3300078: eye_stalk_ball_L_4
+    3300080: eye_stalk_ball_L_5
+    3300082: eye_stalk_ball_R_1
+    3300084: eye_stalk_ball_R_2
+    3300086: eye_stalk_ball_R_3
+    3300088: eye_stalk_ball_R_4
+    3300090: eye_stalk_ball_R_5
+    3300092: eye_stalk_L_1
+    3300094: eye_stalk_L_2
+    3300096: eye_stalk_L_3
+    3300098: eye_stalk_L_4
+    3300100: eye_stalk_L_5
+    3300102: eye_stalk_R_1
+    3300104: eye_stalk_R_2
+    3300106: eye_stalk_R_3
+    3300108: eye_stalk_R_4
+    3300110: eye_stalk_R_5
+    3300112: head
+    3300114: mouth_1
+    3300116: mouth_2
+    3300118: mouth_3
+    3300120: torso
+    3300122: wart_L_1
+    3300124: wart_L_2
+    3300126: wart_L_3
+    3300128: wart_L_4
+    3300130: wart_R_1
+    3300132: wart_R_2
+    3300134: wart_R_3
+    3300136: wart_R_4
+    4300000: torso
+    4300002: head
+    4300004: belt_and_neck
+    4300006: butt
+    4300008: arm_hole_1
+    4300010: arm_hole_2
+    4300012: arm_hole_3
+    4300014: arm_hole_4
+    4300016: arm_hole_5
+    4300018: arm_hole_6
+    4300020: arm_hole_7
+    4300022: arm_hole_1
+    4300024: arm_hole_2
+    4300026: arm_hole_3
+    4300028: arm_hole_4
+    4300030: arm_hole_5
+    4300032: arm_hole_6
+    4300034: arm_hole_7
+    4300036: eye_R_1
+    4300038: eye_R_2
+    4300040: eye_R_3
+    4300042: eye_R_4
+    4300044: eye_R_5
+    4300046: eye_L_1
+    4300048: eye_L_2
+    4300050: eye_L_3
+    4300052: eye_L_4
+    4300054: eye_L_5
+    4300056: eye_stalk_R_1
+    4300058: eye_stalk_ball_R_1
+    4300060: eye_stalk_R_2
+    4300062: eye_stalk_ball_R_2
+    4300064: eye_stalk_R_3
+    4300066: eye_stalk_ball_R_3
+    4300068: eye_stalk_R_4
+    4300070: eye_stalk_ball_R_4
+    4300072: eye_stalk_R_5
+    4300074: eye_stalk_ball_R_5
+    4300076: eye_stalk_L_1
+    4300078: eye_stalk_ball_L_1
+    4300080: eye_stalk_L_2
+    4300082: eye_stalk_ball_L_2
+    4300084: eye_stalk_L_3
+    4300086: eye_stalk_ball_L_3
+    4300088: eye_stalk_L_4
+    4300090: eye_stalk_ball_L_4
+    4300092: eye_stalk_L_5
+    4300094: eye_stalk_ball_L_5
+    4300096: ear_R_1
+    4300098: ear_R_2
+    4300100: ear_R_3
+    4300102: ear_R_4
+    4300104: ear_R_5
+    4300106: ear_L_1
+    4300108: ear_L_2
+    4300110: ear_L_3
+    4300112: ear_L_4
+    4300114: ear_L_5
+    4300116: mouth_1
+    4300118: mouth_2
+    4300120: mouth_3
+    4300122: wart_R_1
+    4300124: wart_R_2
+    4300126: wart_R_3
+    4300128: wart_R_4
+    4300130: wart_L_1
+    4300132: wart_L_2
+    4300134: wart_L_3
+    4300136: wart_L_4
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
