@@ -1,15 +1,22 @@
 fileFormatVersion: 2
-guid: f70701789a4cd2244b535bd4230f5b03
-timeCreated: 1517030127
+guid: c767fe1279f28234ea9d22cb3c6772bd
+timeCreated: 1517021798
 licenseType: Pro
 ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
     100000: //RootNode
+    100002: pal_lSlider
+    100004: pal_silverBox_Slider
     400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: panelDials
+    400002: pal_lSlider
+    400004: pal_silverBox_Slider
+    2300000: pal_lSlider
+    2300002: pal_silverBox_Slider
+    3300000: pal_lSlider
+    3300002: pal_silverBox_Slider
+    4300000: pal_silverBox_Slider
+    4300002: pal_lSlider
     9500000: //RootNode
   materials:
     importMaterials: 1
