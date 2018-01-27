@@ -34,6 +34,8 @@ public enum AlienGalacticHome
 /// </summary>
 public class AlienAI : MonoBehaviour
 {
+    public static AlienAI Instance;
+
     public string RacialName = "Alien";
     public AlienRequirements Requirements;
     public AlienGalacticHome GalacticHome;
@@ -81,6 +83,11 @@ public class AlienAI : MonoBehaviour
     public void RegenerateRacialName()
     {
         RacialName = NamePrefix[(int)Random.Range(0, NamePrefix.Count)] + NamePostfix[(int)Random.Range(0, NamePostfix.Count)];        
+    }
+
+    void Awake()
+    {
+        Instance = this;
     }
         
     // Use this for initialization
