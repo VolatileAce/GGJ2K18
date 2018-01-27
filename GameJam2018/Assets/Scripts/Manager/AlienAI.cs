@@ -99,6 +99,8 @@ public class AlienAI : MonoBehaviour
     public int Max_Antennae = 2;
     public int Max_Ears = 2;
 
+    private Dictionary<int, bool> VisibilityTable = new Dictionary<int, bool>();
+
     public void Randomize()
     {
         var torso = gameObject.GetComponentInChildren<AlienTorsoLimb>();
@@ -108,6 +110,10 @@ public class AlienAI : MonoBehaviour
         //Work out the max
         foreach (var ele in headLimbs)
         {
+            if (ele.LocationID != 0)
+                if (VisibilityTable.ContainsKey(ele.LocationID))
+                    VisibilityTable.Add(ele.LocationID, false);
+
             switch (ele.Limb)
             {
                 case HeadLimbType.Antennae:
@@ -133,6 +139,9 @@ public class AlienAI : MonoBehaviour
 
         foreach (var ele in armLimbs)
         {
+            if (ele.LocationID != 0)
+                VisibilityTable.Add(ele.LocationID, false);
+
             switch (ele.Limb)
             {
                 case ArmLimbType.Robot:
@@ -205,37 +214,67 @@ public class AlienAI : MonoBehaviour
 
         foreach (var ele in headLimbs)
         {
+            if (!ele.gameObject.active)
+                continue;
+
+            if (ele.LocationID != 0)
+                if (VisibilityTable.ContainsKey(ele.LocationID))
+                {
+                    ele.gameObject.SetActive(false);
+                    continue;
+                }
+
             switch (ele.Limb)
             {
                 case HeadLimbType.Antennae:
                     if (antennae <= 0)
                         ele.gameObject.SetActive(false);
-                    antennae--;
+                    else
+                        antennae--;
                     break;
+
                 case HeadLimbType.Ears:
                     if (ears <= 0)
                         ele.gameObject.SetActive(false);
-                    ears--;
+                    else
+                        ears--;
                     break;
+
                 case HeadLimbType.EyeBalls:
                     if (eyeballs <= 0)
                         ele.gameObject.SetActive(false);
+                    else
+                    {
+                        //Disable any eye stalks occupying the same slot
+                        if (ele.LocationID != 0)
+                            VisibilityTable.Add(ele.LocationID, true);
+                    }
+
                     eyeballs--;
                     break;
                 case HeadLimbType.Eye_Stalk:
                     if (eyeStalks <= 0)
                         ele.gameObject.SetActive(false);
-                    eyeStalks--;
+                    else
+                    {
+                        //Disable any eye balls occupying the same slot
+                        if (ele.LocationID != 0)
+                            VisibilityTable.Add(ele.LocationID, true);
+                        eyeStalks--;
+                    }
+
                     break;
                 case HeadLimbType.Mouth:
                     if (mouths <= 0)
                         ele.gameObject.SetActive(false);
-                    mouths--;
+                    else
+                        mouths--;
                     break;
                 case HeadLimbType.Warts:
                     if (warts <= 0)
                         ele.gameObject.SetActive(false);
-                    warts--;
+                    else
+                        warts--;
                     break;
             }
         }

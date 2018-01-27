@@ -10,4 +10,6 @@ using UnityEngine;
 public class AlienLimb : MonoBehaviour
 {
     public virtual LimbLocation Location { get { return LimbLocation.Null; } }
+
+    public int LocationID = -1;
 }
