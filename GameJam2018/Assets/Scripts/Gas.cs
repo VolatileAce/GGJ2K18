@@ -8,7 +8,11 @@ public enum GasType
     Null,
     Oxygen,
     Carbon_Dioxide,
-    Nitrogen
+    Nitrogen,
+    Methane,
+    Sulfur,
+    Hydrogen,
+    Chlorine
 }
 
 

@@ -8,12 +8,7 @@ public class AlienRequirements
     /// <summary>
     /// The gas required to be happy and survive
     /// </summary>
-    public Gas BreathableAtmosphere;
-
-    /// <summary>
-    /// The gas that creates unhappiness and death
-    /// </summary>
-    public Gas ToxicAtmosphere;
+    Dictionary<GasType, Gas> BreathableAtmosphere = new Dictionary<GasType, Gas>();
 
     /// <summary>
     /// What radio makes the passenger happy
@@ -40,16 +35,106 @@ public class AlienRequirements
     {
         MyAlien = in_Alien;
 
-        BreathableAtmosphere = new Gas(GasType.Oxygen);
-        ToxicAtmosphere = new Gas(GasType.Carbon_Dioxide);
+        BreathableAtmosphere.Add(GasType.Oxygen, new Gas(GasType.Oxygen)
+        {
+            Percentage = in_Alien.HeadLimbCount[HeadLimbType.Eye_Stalk] * 0.05f
+        });
+        BreathableAtmosphere.Add(GasType.Carbon_Dioxide, new Gas(GasType.Carbon_Dioxide)
+        {
+            Percentage = (in_Alien.HeadLimbCount[HeadLimbType.Eye_Stalk] * -0.05f) + in_Alien.ArmLimbCount[ArmLimbType.Tentacle] * 0.01f
+        });
+        BreathableAtmosphere.Add(GasType.Nitrogen, new Gas(GasType.Nitrogen)
+        {
+            Percentage = in_Alien.HeadLimbCount[HeadLimbType.EyeBalls] * 0.05f
+        });
+        BreathableAtmosphere.Add(GasType.Methane, new Gas(GasType.Methane)
+        {
+            Percentage = in_Alien.HeadLimbCount[HeadLimbType.EyeBalls] * -0.10f + in_Alien.ArmLimbCount[ArmLimbType.Tentacle] * 0.5f
+        });
+        BreathableAtmosphere.Add(GasType.Sulfur, new Gas(GasType.Sulfur)
+        {
+            Percentage = in_Alien.ArmLimbCount[ArmLimbType.Robot] * -0.05f + (in_Alien.HeadLimbCount[HeadLimbType.Antennae] > 0 ? 0.65f : 0f)
+        });
+        BreathableAtmosphere.Add(GasType.Hydrogen, new Gas(GasType.Hydrogen)
+        {
+            Percentage = in_Alien.HeadLimbCount[HeadLimbType.Mouth] > 0 ? 0.65f : 0f + in_Alien.HeadLimbCount[HeadLimbType.Antennae] > 0 ? 0.21f : 0f
+        });
+        BreathableAtmosphere.Add(GasType.Chlorine, new Gas(GasType.Chlorine)
+        {
+            Percentage = in_Alien.HeadLimbCount[HeadLimbType.Mouth] * -0.42f 
+        });
+
+        switch (in_Alien.ArmLimbCount[ArmLimbType.Tentacle])
+        {
+            case 1:
+                BreathableAtmosphere[GasType.Nitrogen].Percentage += 0.01f;
+                break;
+            case 2:
+                BreathableAtmosphere[GasType.Nitrogen].Percentage += 0.10f;
+                break;
+            case 3:
+                BreathableAtmosphere[GasType.Nitrogen].Percentage += 0.14f;
+                break;
+            case 4:
+                BreathableAtmosphere[GasType.Nitrogen].Percentage += 0.10f;
+                break;
+            case 5:
+                BreathableAtmosphere[GasType.Nitrogen].Percentage += 0.02f;
+                break;
+            case 6:
+                BreathableAtmosphere[GasType.Nitrogen].Percentage += 0.03f;
+                break;
+            case 7:
+                BreathableAtmosphere[GasType.Nitrogen].Percentage += 0.04f;
+                break;
+            case 8:
+                BreathableAtmosphere[GasType.Nitrogen].Percentage += 0.02f;
+                break;
+            case 9:
+                BreathableAtmosphere[GasType.Nitrogen].Percentage += 0.03f;
+                break;
+            case 10:
+                BreathableAtmosphere[GasType.Nitrogen].Percentage += 0.10f;
+                break;
+
+            case 11:
+                BreathableAtmosphere[GasType.Nitrogen].Percentage += 0.21f;
+                break;
+            case 12:
+                BreathableAtmosphere[GasType.Nitrogen].Percentage += 0.04f;
+                break;
+            case 13:
+                BreathableAtmosphere[GasType.Nitrogen].Percentage += 0.10f;
+                break;
+            case 14:
+                BreathableAtmosphere[GasType.Nitrogen].Percentage += 0.05f;
+                break;
+        }
+        switch (in_Alien.HeadLimbCount[HeadLimbType.Warts])
+        {
+            case 1:
+                BreathableAtmosphere[GasType.Chlorine].Percentage += 0.09f;
+                break;
+            case 2:
+                BreathableAtmosphere[GasType.Chlorine].Percentage += 0.13f;
+                break;
+            case 3:
+                BreathableAtmosphere[GasType.Chlorine].Percentage += 0.5f;
+                break;
+            case 4:
+                BreathableAtmosphere[GasType.Chlorine].Percentage += 0.15f;
+                break;
+            case 5:
+                BreathableAtmosphere[GasType.Chlorine].Percentage += 0.15f;
+                break;
+        }
 
         LikedRadio = new Radio(RadioType.NULL, 0.5f, 0.1f);
         HatedRadio = new Radio(RadioType.Cantina, 0.5f, 0.1f);
 
         LikedHeat = new Heat(20, 5);
 
-
-        switch (((AlienTorsoLimb)MyAlien.GetLimb(LimbLocation.Torso)).Limb)
+        switch (MyAlien.TorsoColor)
         {
             case TorsoLimbType.Red:
                 LikedHeat.TemperatureDegrees = HeatingManager.Instance.MinTemperature;
@@ -63,10 +148,12 @@ public class AlienRequirements
                 LikedHeat.TemperatureDegrees = HeatingManager.Instance.MaxTemperature / 2;
                 break;
         }
+
     }
 
     public float RatingPenaltyPerSecond = 0.1f;
     public float RatingBonusPerSecond = 0.1f;
+    public float breathableTolerance = 0.1f;
 
     public void Evaluate()
     {
@@ -75,17 +162,31 @@ public class AlienRequirements
         string heatRating = "Neutral";
 
         //Atmosphere   
-        var goodGas = AtmosphereManager.GetGas(this.BreathableAtmosphere.GasType);
-        var badGas = AtmosphereManager.GetGas(this.ToxicAtmosphere.GasType);
+        float gasPenalty = 0f;
+        foreach (var myGas in this.BreathableAtmosphere)
+        {
+            var cabinGas = AtmosphereManager.GetGas(myGas.Key);
 
-        float breathableTolerance = 0.1f;
+            float diff = Mathf.Abs(cabinGas.Percentage - myGas.Value.Percentage);
 
-        if (goodGas.GasType != GasType.Null)
-            if (Mathf.Abs(goodGas.Percentage - BreathableAtmosphere.Percentage) < breathableTolerance)
-                ScoreManager.ImproveUberRating(breathableTolerance * Time.deltaTime);
+            if (diff > breathableTolerance)
+                gasPenalty -= RatingPenaltyPerSecond * Time.deltaTime;
+            else
+                gasPenalty += RatingBonusPerSecond* Time.deltaTime;
+        }
 
-        if (badGas.GasType != GasType.Null)
-            ScoreManager.DamageUberRating(badGas.Percentage * Time.deltaTime);
+
+        if (gasPenalty > 0)
+        {
+            gasRating = "Good Atmosphere: " + gasPenalty;
+            ScoreManager.ImproveUberRating(gasPenalty);
+        }
+        else
+        {
+            gasRating = "Bad Atmosphere: " + gasPenalty;
+            ScoreManager.DamageUberRating(-gasPenalty);
+        }
+
 
         //Music
         if (RadioMusicManager.Instance.CurrentRadio.RadioType == HatedRadio.RadioType)
