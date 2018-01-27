@@ -16,6 +16,18 @@ public enum LimbLocation
 }
 
 /// <summary>
+/// Language, and audio cues about alien
+/// </summary>
+public enum AlienGalacticHome
+{
+    Central,
+    Inner,
+    Outer,
+
+    MAX_TYPES
+}
+
+/// <summary>
 /// an asset and location to place on the alien
 /// </summary>
 [System.Serializable]
@@ -30,7 +42,6 @@ public class AlienLimb : MonoBehaviour
 public class Alien : MonoBehaviour
 {
     public string RacialName = "Alien";
-
 
     private List<string> NamePrefix = new List<string>()
     {
@@ -51,8 +62,7 @@ public class Alien : MonoBehaviour
         "pian",
         "ions"
     };
-
-
+    
     public List<AlienLimb> AllLimbs = new List<AlienLimb>();
 
     public AlienLimb GetLimb(LimbLocation in_Type)
@@ -70,7 +80,9 @@ public class Alien : MonoBehaviour
     {
         RacialName = NamePrefix[(int)Random.Range(0, NamePrefix.Count)] + NamePostfix[(int)Random.Range(0, NamePostfix.Count)];        
     }
-    
+
+    public AlienGalacticHome GalacticHome;
+
 
     /// <summary>
     /// The gas required to be happy and survive
@@ -91,17 +103,16 @@ public class Alien : MonoBehaviour
     public void Randomize()
     {
         int seed = System.DateTime.Now.Millisecond + System.DateTime.Now.Minute + System.DateTime.Now.Hour;
-        Random.seed = seed;
+        Random.InitState( seed);
 
         RegenerateRacialName();
 
-        // Torso
-        TorsoLimbType Torso = (TorsoLimbType)Random.Range((int)1, (int)TorsoLimbType.MAX_TYPES );
+        //Randomize the home, effecting language and audio
+        GalacticHome = (AlienGalacticHome)Random.Range((int)0, (int)TorsoLimbType.MAX_TYPES);
 
-        //Arms
-        ArmLimbType Arms = ((ArmLimbType)Random.Range((int)1, (int)ArmLimbType.MAX_TYPES ));
-
-        //Hat
+        //Randomize the limbs
+        TorsoLimbType Torso = (TorsoLimbType)Random.Range((int)1, (int)TorsoLimbType.MAX_TYPES );        
+        ArmLimbType Arms = ((ArmLimbType)Random.Range((int)1, (int)ArmLimbType.MAX_TYPES ));        
         HatLimbType Hat = ((HatLimbType)Random.Range((int)1, (int)HatLimbType.MAX_TYPES ));
 
         //Now we set up the rendering of the alien to match!
