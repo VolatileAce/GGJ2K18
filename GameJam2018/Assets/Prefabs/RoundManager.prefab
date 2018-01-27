@@ -126,10 +126,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentGameState: 0
-  PickupTimeMin: 30
-  PickupTimeMax: 30
-  TransportTimeMin: 60
-  TransportTimeMax: 60
+  PickupTimeMin: 3
+  PickupTimeMax: 3
+  TransportTimeMin: 6
+  TransportTimeMax: 6
+  DestinationTimeMin: 5
+  DestinationTimeMax: 5
   ClockText: {fileID: 114496514723004666}
   StateText: {fileID: 114877911881463894}
 --- !u!114 &114496514723004666
