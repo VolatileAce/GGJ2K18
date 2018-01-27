@@ -23,29 +23,28 @@ public class SplineWalkerControls : MonoBehaviour {
         if (goingForward)
         {
             //progress
-            if (progress > 1f)
+            if (value > 1f)
             {
                 if (mode == SplineWalkerMode.Once)
                 {
-                    progress = 1f;
+                    value = 1f;
                 }
                 else if (mode == SplineWalkerMode.Loop)
                 {
-                    progress -= 1f;
+                    value -= 1f;
                 }
                 else
                 {
-                    progress = 2f - progress;
+                    value = 2f - progress;
                     goingForward = false;
                 }
             }
         }
         else
         {
-            progress -= Time.deltaTime / duration;
-            if (progress < 0f)
+            if (value < 0f)
             {
-                progress = -progress;
+                value = -progress;
                 goingForward = true;
             }
         }
@@ -54,7 +53,7 @@ public class SplineWalkerControls : MonoBehaviour {
         transform.localPosition = position;
         if (lookForward)
         {
-            transform.LookAt(position + spline.GetDirection(progress));
+            transform.LookAt(position + spline.GetDirection(value));
         }
     }
 }
