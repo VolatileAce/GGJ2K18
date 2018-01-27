@@ -22,6 +22,26 @@ public class UberReview
 
 public class ScoreManager : MonoBehaviour
 {
+    public List<string> FunnyReview = new List<string>()
+    {
+        "Driver took off before my wife got in!",
+        "Why did the driver look nervous when we passed the policeman?",
+        "I've never seen someone so skillfully reverse-tailgait",
+        "I would have liked the driver to open the window a crack",
+        "Car smelt like space pizza",
+        "I found a space penny and dime in the space between the seats",
+        "Driver left my kids behind!",
+        "Driver hit a space rabbit. He had to swerve to get it.",
+        "Someone left their sandwich on the seat. It was not very good.",
+        "This is the worse Space-AirBnB I have ever stayed in.",
+        "SPACE-GOOGLE, LEAVE A REVIEW FOR THIS DRIVER",
+        "He drove the wrong way around Saturn's rings and then laughed.",
+        "Driver didn't even try to take me to my destination",
+        "Is being called a Glip Glop a good thing?" ,
+        "potato potato potato potato potato potato potato potato potato potato potato potato potato",
+        "Driver looked really stressed"
+    };
+
     public static ScoreManager Instance;
     public List<UberReview> Reviews = new List<UberReview>();
 
@@ -35,6 +55,7 @@ public class ScoreManager : MonoBehaviour
 
     public Text EarningsText;
     public Text PassangerText;
+    public Text ReviewText;
 
 
     public string WinMessage = "You Win";
@@ -79,7 +100,7 @@ public class ScoreManager : MonoBehaviour
     public static void EvaluateWinCondition()
     {
         float Payment = Mathf.Round(Random.Range(5, 15)) + (Random.Range(0, 99) / 100f);
-        UberReview newReview = new UberReview(UberRating, AlienAI.Instance.RacialName, Payment, string.Empty);
+        UberReview newReview = new UberReview(UberRating, AlienAI.Instance.RacialName, Payment, Instance.FunnyReview[Random.Range(0, Instance.FunnyReview.Count)]);
 
         Instance.Reviews.Add(newReview);
     }
@@ -87,7 +108,7 @@ public class ScoreManager : MonoBehaviour
     public void ShowReceiptScreen()
     {
         ReceiptScreen.gameObject.SetActive(true);
-
+        
         Instance.UI_Star1.gameObject.SetActive(UberRating > 4);
         Instance.UI_Star2.gameObject.SetActive(UberRating > 3);
         Instance.UI_Star3.gameObject.SetActive(UberRating > 2);
@@ -96,6 +117,7 @@ public class ScoreManager : MonoBehaviour
 
         Instance.PassangerText.text = Reviews[Reviews.Count - 1].Name;
         Instance.EarningsText.text = "$" + Reviews[Reviews.Count - 1].Payment;
+        Instance.ReviewText.text = Reviews[Reviews.Count - 1].Message;
     }
 
     public void HideReceiptScreen()

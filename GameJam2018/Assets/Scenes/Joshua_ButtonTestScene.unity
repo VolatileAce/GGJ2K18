@@ -814,6 +814,81 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &681839267
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 681839268}
+  - component: {fileID: 681839270}
+  - component: {fileID: 681839269}
+  m_Layer: 0
+  m_Name: ReviewText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &681839268
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 681839267}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1696313178}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -38}
+  m_SizeDelta: {x: 400, y: 200}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &681839269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 681839267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 22
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: The driver did a path on the way to my destination by I didnt even have
+    time to accidentally what they said I think I did.
+--- !u!222 &681839270
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 681839267}
 --- !u!1 &768675329 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1533055400595396, guid: e7212249bda86b64fa2964d67803a849,
@@ -2054,22 +2129,22 @@ Prefab:
     - target: {fileID: 114277190629812148, guid: cdf32dfcd615742489d82f667c67cf99,
         type: 2}
       propertyPath: PickupTimeMin
-      value: 15
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 114277190629812148, guid: cdf32dfcd615742489d82f667c67cf99,
         type: 2}
       propertyPath: PickupTimeMax
-      value: 15
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 114277190629812148, guid: cdf32dfcd615742489d82f667c67cf99,
         type: 2}
       propertyPath: TransportTimeMin
-      value: 30
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 114277190629812148, guid: cdf32dfcd615742489d82f667c67cf99,
         type: 2}
       propertyPath: TransportTimeMax
-      value: 45
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 114277190629812148, guid: cdf32dfcd615742489d82f667c67cf99,
         type: 2}
@@ -2429,11 +2504,35 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1912662479339838, guid: 6cd7f5e37e66ba14ba0684c58458caa0, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1706995045610716, guid: 6cd7f5e37e66ba14ba0684c58458caa0, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224755278385767632, guid: 6cd7f5e37e66ba14ba0684c58458caa0,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 156
+      objectReference: {fileID: 0}
+    - target: {fileID: 114530833379978224, guid: 6cd7f5e37e66ba14ba0684c58458caa0,
+        type: 2}
+      propertyPath: m_FontData.m_FontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114847037965726834, guid: 6cd7f5e37e66ba14ba0684c58458caa0,
+        type: 2}
+      propertyPath: ReviewText
+      value: 
+      objectReference: {fileID: 681839269}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6cd7f5e37e66ba14ba0684c58458caa0, type: 2}
   m_IsPrefabParent: 0
+--- !u!224 &1696313178 stripped
+RectTransform:
+  m_PrefabParentObject: {fileID: 224678273904634092, guid: 6cd7f5e37e66ba14ba0684c58458caa0,
+    type: 2}
+  m_PrefabInternal: {fileID: 1556454287}
 --- !u!1 &1817050662
 GameObject:
   m_ObjectHideFlags: 0
