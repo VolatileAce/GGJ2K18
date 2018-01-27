@@ -9,6 +9,8 @@ public class SliderEvent : UnityEvent<float> { }
 public class Slider : InteractableItem
 {
 
+    public float CurrentValue = 0;
+
     public int KnobNumber;
 
     public SliderEvent OnValueChanged;
@@ -49,6 +51,7 @@ public class Slider : InteractableItem
         lastChangeTime = Time.time;
         hasChangedColor = false;
         OnValueChanged.Invoke(newValue);
+        CurrentValue = newValue;
     }
 
     void Update()
