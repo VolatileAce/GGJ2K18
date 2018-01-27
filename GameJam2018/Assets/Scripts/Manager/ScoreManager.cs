@@ -108,6 +108,8 @@ public class ScoreManager : MonoBehaviour
     public void ShowReceiptScreen()
     {
         ReceiptScreen.gameObject.SetActive(true);
+
+        AnimatedEntry.Instance.AnimateOn();
         
         Instance.UI_Star1.gameObject.SetActive(UberRating > 4);
         Instance.UI_Star2.gameObject.SetActive(UberRating > 3);

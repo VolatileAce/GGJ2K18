@@ -45,6 +45,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1354977503678360
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 224948260750344594}
+  - component: {fileID: 222577508349902322}
+  - component: {fileID: 114559711164357308}
+  m_Layer: 0
+  m_Name: ReviewText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1480269817551630
 GameObject:
   m_ObjectHideFlags: 1
@@ -189,6 +206,7 @@ GameObject:
   - component: {fileID: 223175763878098278}
   - component: {fileID: 114009601517108606}
   - component: {fileID: 114161847276710970}
+  - component: {fileID: 114063741195825818}
   m_Layer: 0
   m_Name: RideReceiptCanvas
   m_TagString: Untagged
@@ -240,7 +258,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
+  m_ScaleFactor: 0.5
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
@@ -274,6 +292,69 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!114 &114063741195825818
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1912662479339838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe2229453f8b71a42894f21a18d4a8f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StartScale: {x: 1, y: 0.25, z: 1}
+  StartPosition: {x: 0, y: -200, z: 0}
+  EndScale: {x: 1, y: 1, z: 1}
+  EndPosition: {x: 0, y: 0, z: 0}
+  ScaleCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0.0033569336
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.70965856
+      value: 0.9845047
+      inSlope: 0.93497336
+      outSlope: 0.93497336
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 1.0033569
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  PositionCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.78817225
+      value: 0.7585993
+      inSlope: -1.2141837
+      outSlope: -1.2141837
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!114 &114106124919173768
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -475,7 +556,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 26
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 225
@@ -486,6 +567,40 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: PaxMcDouble
+--- !u!114 &114559711164357308
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1354977503678360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 22
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: The driver did a path on the way to my destination by I didnt even have
+    time to accidentally what they said I think I did.
 --- !u!114 &114847037965726834
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -497,6 +612,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93af2db321118514c99db15b782e3215, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FunnyReview:
+  - Driver took off before my wife got in!
+  - Why did the driver look nervous when we passed the policeman?
+  - I've never seen someone so skillfully reverse-tailgait
+  - I would have liked the driver to open the window a crack
+  - Car smelt like space pizza
+  - I found a space penny and dime in the space between the seats
+  - Driver left my kids behind!
+  - Driver hit a space rabbit. He had to swerve to get it.
+  - Someone left their sandwich on the seat. It was not very good.
+  - This is the worse Space-AirBnB I have ever stayed in.
+  - SPACE-GOOGLE, LEAVE A REVIEW FOR THIS DRIVER
+  - He drove the wrong way around Saturn's rings and then laughed.
+  - Driver didn't even try to take me to my destination
+  - Is being called a Glip Glop a good thing?
+  - potato potato potato potato potato potato potato potato potato potato potato potato
+    potato
+  - Driver looked really stressed
   ReceiptScreen: {fileID: 223175763878098278}
   UI_Star1: {fileID: 114037637710564644}
   UI_Star2: {fileID: 114271619365652720}
@@ -505,6 +638,7 @@ MonoBehaviour:
   UI_Star5: {fileID: 114382006485078682}
   EarningsText: {fileID: 114973634221550626}
   PassangerText: {fileID: 114530833379978224}
+  ReviewText: {fileID: 114559711164357308}
   WinMessage: You Win
 --- !u!114 &114973634221550626
 MonoBehaviour:
@@ -569,6 +703,12 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1276293391547720}
+--- !u!222 &222577508349902322
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1354977503678360}
 --- !u!222 &222811997481803394
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -687,6 +827,7 @@ RectTransform:
   - {fileID: 224741663049193802}
   - {fileID: 224827957034516626}
   - {fileID: 224755278385767632}
+  - {fileID: 224948260750344594}
   m_Father: {fileID: 4543353874645454}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -746,7 +887,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3, y: 40}
+  m_AnchoredPosition: {x: 3, y: 156}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224827957034516626
@@ -820,4 +961,22 @@ RectTransform:
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 2, y: -313}
   m_SizeDelta: {x: 64, y: 64}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!224 &224948260750344594
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1354977503678360}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 224678273904634092}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -38}
+  m_SizeDelta: {x: 400, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
