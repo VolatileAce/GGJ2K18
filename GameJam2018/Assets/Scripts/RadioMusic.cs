@@ -9,7 +9,7 @@ public enum RadioType
 
     Cantina,
     Space_Opera,
-    Retro_Millenium
+    Space_Jazz
 }
 
 [System.Serializable]

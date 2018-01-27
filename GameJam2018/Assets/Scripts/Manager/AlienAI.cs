@@ -34,6 +34,8 @@ public enum AlienGalacticHome
 /// </summary>
 public class AlienAI : MonoBehaviour
 {
+    public static AlienAI Instance;
+
     public string RacialName = "Alien";
     public AlienRequirements Requirements;
     public AlienGalacticHome GalacticHome;
@@ -82,6 +84,11 @@ public class AlienAI : MonoBehaviour
     {
         RacialName = NamePrefix[(int)Random.Range(0, NamePrefix.Count)] + NamePostfix[(int)Random.Range(0, NamePostfix.Count)];        
     }
+
+    void Awake()
+    {
+        Instance = this;
+    }
         
     // Use this for initialization
     void Start()
@@ -100,6 +107,11 @@ public class AlienAI : MonoBehaviour
     public TorsoLimbType TorsoColor;
 
     private Dictionary<int, bool> VisibilityTable = new Dictionary<int, bool>();
+
+    public void ScheduleRequets(int in_Requests = 3)
+    {
+
+    }
 
     public void Randomize()
     {
