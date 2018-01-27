@@ -42,6 +42,11 @@ public class AlienAI : MonoBehaviour
     public Text DebugMusicText;
     public Text DebugAtmosphereText;
     public Text DebugUberText;
+    public Material AlienSkinMaterial;
+
+    public Color SkinRed;
+    public Color SkinBlue;
+    public Color SkinGreen;
 
     private List<string> NamePrefix = new List<string>()
     {
@@ -149,8 +154,23 @@ public class AlienAI : MonoBehaviour
         //Randomize the home, effecting language and audio
         GalacticHome = (AlienGalacticHome)Random.Range((int)0, (int)TorsoLimbType.MAX_TYPES);
 
-        //Randomize the limbs
+        //Randomize the skin color
         TorsoLimbType Torso = (TorsoLimbType)Random.Range((int)1, (int)TorsoLimbType.MAX_TYPES );
+
+        switch(Torso)
+        {
+            case TorsoLimbType.Blue:
+                AlienSkinMaterial.color = SkinBlue;
+                break;
+
+            case TorsoLimbType.Green:
+                AlienSkinMaterial.color = SkinGreen;
+                break;
+
+            case TorsoLimbType.Red:
+                AlienSkinMaterial.color = SkinRed;
+                break;
+        }
 
         int eyeStalks = Random.Range(0, Max_EyeStalks);
         int eyeballs = Random.Range(0, Max_EyeBalls);
