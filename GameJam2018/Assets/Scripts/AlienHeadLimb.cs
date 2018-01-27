@@ -12,6 +12,7 @@ public enum HeadLimbType
     EyeBalls,
     Mouth,
     Antennae,
+    Ears,
 
     MAX_TYPES
 }
