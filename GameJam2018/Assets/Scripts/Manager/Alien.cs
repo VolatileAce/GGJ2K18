@@ -3,18 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// Which asset, signaling alien needs
-/// </summary>
-[System.Serializable]
-public enum LimbType
-{
-    Null,
-
-    Tentacles,
-    Eye_Stalk
-}
-
-/// <summary>
 /// Which placement point on the alien
 /// </summary>
 [System.Serializable]
@@ -23,25 +11,17 @@ public enum LimbLocation
     Null,
 
     Hat,
-    Face,
-    Left_Arm,
-    Right_Arm
+    Torso,
+    Arms,
 }
 
 /// <summary>
 /// an asset and location to place on the alien
 /// </summary>
 [System.Serializable]
-public class AlienLimb
+public class AlienLimb : MonoBehaviour
 {
-    public LimbType Limb;
-    public LimbLocation Location;
-
-    public AlienLimb(LimbType in_Limb, LimbLocation in_Location)
-    {
-        Limb = in_Limb;
-        Location = in_Location;
-    }
+    public virtual LimbLocation Location { get { return LimbLocation.Null; } }    
 }
 
 /// <summary>
@@ -79,10 +59,11 @@ public class Alien : MonoBehaviour
     {
         foreach (var limb in AllLimbs)
         {
-            if (limb.Limb.Equals(in_Type))
+            if (limb.Location.Equals(in_Type))
                 return limb;
         }
-        return new AlienLimb(LimbType.Null, LimbLocation.Null);
+
+        return null;
     }    
 
     public void RegenerateRacialName()
@@ -109,7 +90,36 @@ public class Alien : MonoBehaviour
 
     public void Randomize()
     {
+        int seed = System.DateTime.Now.Millisecond + System.DateTime.Now.Minute + System.DateTime.Now.Hour;
+        Random.seed = seed;
+
         RegenerateRacialName();
+
+        // Torso
+        TorsoLimbType Torso = (TorsoLimbType)Random.Range((int)1, (int)TorsoLimbType.MAX_TYPES );
+
+        //Arms
+        ArmLimbType Arms = ((ArmLimbType)Random.Range((int)1, (int)ArmLimbType.MAX_TYPES ));
+
+        //Hat
+        HatLimbType Hat = ((HatLimbType)Random.Range((int)1, (int)HatLimbType.MAX_TYPES ));
+
+        //Now we set up the rendering of the alien to match!
+        var torsos = gameObject.GetComponentsInChildren<AlienTorsoLimb>();
+        var arms = gameObject.GetComponentsInChildren<AlienArmLimb>();
+        var hats = gameObject.GetComponentsInChildren<AlienHatLimb>();
+
+        foreach (var ele in torsos)
+            if (ele.Limb != Torso)
+                ele.gameObject.SetActive(false);
+
+        foreach (var ele in arms)
+            if (ele.Limb != Arms)
+                ele.gameObject.SetActive(false);
+
+        foreach (var ele in hats)
+            if (ele.Limb != Hat)
+                ele.gameObject.SetActive(false);
     }
 
     // Update is called once per frame

@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AtmosphereManager : MonoBehaviour {
-
+public class AtmosphereManager : MonoBehaviour
+{
     //Static Acess to this class set on awake
     public static AtmosphereManager Instance;
-
 
     public List<Gas> AllGases = new List<Gas>();
 
@@ -14,7 +13,6 @@ public class AtmosphereManager : MonoBehaviour {
     {
         Instance = this;
     }
-
 
     public static Gas GetGas(GasType in_Type)
     {
