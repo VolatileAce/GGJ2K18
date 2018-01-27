@@ -1,0 +1,190 @@
+fileFormatVersion: 2
+guid: 03782739ccc5b1e49aad198d4e7aee9a
+timeCreated: 1517053909
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: bubble
+    100002: CarbonDioxideTubes
+    100004: ChlorineLiquid
+    100006: ChlorineTubes001
+    100008: flassTubeSulphur
+    100010: glassTubesNitrogen
+    100012: HydrogenGlass
+    100014: HydrogenLiquid
+    100016: liquid_CarbonDioxide
+    100018: liquid_Oxygen
+    100020: liquidNitrogen
+    100022: //RootNode
+    100024: MethaneLiquid
+    100026: MethaneTubes
+    100028: oxygenTubes
+    100030: SulphurLiquid
+    100032: tags
+    100034: tembLiquid
+    100036: tembTube
+    100038: tempLiquid_ToAnimate
+    100040: tubesPanel
+    100042: Volume
+    400000: bubble
+    400002: CarbonDioxideTubes
+    400004: ChlorineLiquid
+    400006: ChlorineTubes001
+    400008: flassTubeSulphur
+    400010: glassTubesNitrogen
+    400012: HydrogenGlass
+    400014: HydrogenLiquid
+    400016: liquid_CarbonDioxide
+    400018: liquid_Oxygen
+    400020: liquidNitrogen
+    400022: //RootNode
+    400024: MethaneLiquid
+    400026: MethaneTubes
+    400028: oxygenTubes
+    400030: SulphurLiquid
+    400032: tags
+    400034: tembLiquid
+    400036: tembTube
+    400038: tempLiquid_ToAnimate
+    400040: tubesPanel
+    400042: Volume
+    2300000: bubble
+    2300002: CarbonDioxideTubes
+    2300004: ChlorineLiquid
+    2300006: ChlorineTubes001
+    2300008: flassTubeSulphur
+    2300010: glassTubesNitrogen
+    2300012: HydrogenGlass
+    2300014: HydrogenLiquid
+    2300016: liquid_CarbonDioxide
+    2300018: liquid_Oxygen
+    2300020: liquidNitrogen
+    2300022: MethaneLiquid
+    2300024: MethaneTubes
+    2300026: oxygenTubes
+    2300028: SulphurLiquid
+    2300030: tags
+    2300032: tembLiquid
+    2300034: tembTube
+    2300036: tempLiquid_ToAnimate
+    2300038: tubesPanel
+    2300040: Volume
+    3300000: bubble
+    3300002: CarbonDioxideTubes
+    3300004: ChlorineLiquid
+    3300006: ChlorineTubes001
+    3300008: flassTubeSulphur
+    3300010: glassTubesNitrogen
+    3300012: HydrogenGlass
+    3300014: HydrogenLiquid
+    3300016: liquid_CarbonDioxide
+    3300018: liquid_Oxygen
+    3300020: liquidNitrogen
+    3300022: MethaneLiquid
+    3300024: MethaneTubes
+    3300026: oxygenTubes
+    3300028: SulphurLiquid
+    3300030: tags
+    3300032: tembLiquid
+    3300034: tembTube
+    3300036: tempLiquid_ToAnimate
+    3300038: tubesPanel
+    3300040: Volume
+    4300000: Volume
+    4300002: glassTubesNitrogen
+    4300004: HydrogenLiquid
+    4300006: ChlorineTubes001
+    4300008: MethaneTubes
+    4300010: CarbonDioxideTubes
+    4300012: oxygenTubes
+    4300014: tembTube
+    4300016: tubesPanel
+    4300018: tags
+    4300020: liquidNitrogen
+    4300022: SulphurLiquid
+    4300024: flassTubeSulphur
+    4300026: HydrogenGlass
+    4300028: ChlorineLiquid
+    4300030: bubble
+    4300032: MethaneLiquid
+    4300034: liquid_CarbonDioxide
+    4300036: liquid_Oxygen
+    4300038: tembLiquid
+    4300040: tempLiquid_ToAnimate
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
