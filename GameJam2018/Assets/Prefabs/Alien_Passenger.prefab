@@ -21834,6 +21834,20 @@ MonoBehaviour:
   DebugMusicText: {fileID: 114033651882094232}
   DebugAtmosphereText: {fileID: 114848073192328196}
   DebugUberText: {fileID: 114792802412554496}
+  NamePrefix:
+  - Mee
+  - Cronen
+  - Gromfla
+  - Hu
+  - Gazor
+  - Butter
+  NamePostfix:
+  - seek
+  - berg
+  - mite
+  - man
+  - pian
+  - ions
   AllLimbs: []
 --- !u!114 &114848073192328196
 MonoBehaviour:
