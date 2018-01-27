@@ -4,4 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 5d26d5fafd08dd0449f337f806ad0ca6
+  - enabled: 1
+    path: Assets/Scenes/Joshua_ButtonTestScene.unity
+    guid: ff335a96d60bf974d843d9012009691b

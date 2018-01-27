@@ -152,14 +152,17 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1018273700849182, guid: a70d5d768ee2f9549b0ac68287a2347a, type: 2}
+    - target: {fileID: 1236621387525530, guid: a70d5d768ee2f9549b0ac68287a2347a, type: 2}
+      propertyPath: m_Name
+      value: SpaceFlight
+      objectReference: {fileID: 0}
+    - target: {fileID: 1236621387525530, guid: a70d5d768ee2f9549b0ac68287a2347a, type: 2}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 198125396127778170, guid: a70d5d768ee2f9549b0ac68287a2347a,
-        type: 2}
-      propertyPath: randomSeed
-      value: 1556241383
+    - target: {fileID: 1478355650627172, guid: a70d5d768ee2f9549b0ac68287a2347a, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a70d5d768ee2f9549b0ac68287a2347a, type: 2}
