@@ -1,0 +1,45 @@
+Initialize engine version: 2017.1.0f3 (472613c02cf7)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 960 (ID=0x1401)
+    Vendor:   NVIDIA
+    VRAM:     4010 MB
+    Driver:   21.21.13.7633
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\gamejam\Desktop\Uber Space GitHub\Build\Uberspace_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\gamejam\Desktop\Uber Space GitHub\Build\Uberspace_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\gamejam\Desktop\Uber Space GitHub\Build\Uberspace_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\gamejam\Desktop\Uber Space GitHub\Build\Uberspace_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\gamejam\Desktop\Uber Space GitHub\Build\Uberspace_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\gamejam\Desktop\Uber Space GitHub\Build\Uberspace_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\gamejam\Desktop\Uber Space GitHub\Build\Uberspace_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\gamejam\Desktop\Uber Space GitHub\Build\Uberspace_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\gamejam\Desktop\Uber Space GitHub\Build\Uberspace_Data\Managed\UnityEngine.Timeline.dll (this message is harmless)
+Loading C:\Users\gamejam\Desktop\Uber Space GitHub\Build\Uberspace_Data\Managed\UnityEngine.Timeline.dll into Unity Child Domain
+Platform assembly: C:\Users\gamejam\Desktop\Uber Space GitHub\Build\Uberspace_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\gamejam\Desktop\Uber Space GitHub\Build\Uberspace_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+Platform assembly: C:\Users\gamejam\Desktop\Uber Space GitHub\Build\Uberspace_Data\Managed\TextMeshPro-1.0.55.2017.1.0b12.dll (this message is harmless)
+Loading C:\Users\gamejam\Desktop\Uber Space GitHub\Build\Uberspace_Data\Managed\TextMeshPro-1.0.55.2017.1.0b12.dll into Unity Child Domain
+Platform assembly: C:\Users\gamejam\Desktop\Uber Space GitHub\Build\Uberspace_Data\Managed\System.dll (this message is harmless)
+Platform assembly: C:\Users\gamejam\Desktop\Uber Space GitHub\Build\Uberspace_Data\Managed\System.Core.dll (this message is harmless)
+- Completed reload, in  0.022 seconds
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 0.701584 ms
+Setting up 4 worker threads for Enlighten.
+  Thread -> id: 4cc -> priority: 1 
+  Thread -> id: 102c -> priority: 1 
+  Thread -> id: 2b18 -> priority: 1 
+  Thread -> id: 1bf8 -> priority: 1 
+The referenced script on this Behaviour (Game Object 'PaxCamera') is missing!
+ 
+(Filename:  Line: 1758)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 4.185767 ms
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 2804.
+Total: 0.624965 ms (FindLiveObjects: 0.121087 ms CreateObjectMapping: 0.025539 ms MarkObjects: 0.466620 ms  DeleteObjects: 0.011417 ms)
+
