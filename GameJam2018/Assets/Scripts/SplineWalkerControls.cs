@@ -14,7 +14,8 @@ public class SplineWalkerControls : MonoBehaviour {
 
 	private void Update () {
 
-        UpdatePosition(AtmosphereManager.GetGas(GasType).Percentage);
+        progress = AtmosphereManager.GetGas(GasType).Percentage;
+        UpdatePosition(progress);
 
 	}
 
@@ -50,7 +51,7 @@ public class SplineWalkerControls : MonoBehaviour {
         }
 
         Vector3 position = spline.GetPoint(progress);
-        transform.localPosition = position;
+        transform.position = position;
         if (lookForward)
         {
             transform.LookAt(position + spline.GetDirection(value));
