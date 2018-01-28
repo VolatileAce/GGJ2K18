@@ -31,6 +31,8 @@ public enum GameWinState
 /// </summary>
 public class RoundManager : MonoBehaviour
 {
+    public static RoundManager Instance;
+
     [HideInInspector]
     public Dictionary<UserSpaceState, int> StateDurations = new Dictionary<UserSpaceState, int>();
     
@@ -62,6 +64,8 @@ public class RoundManager : MonoBehaviour
 
     void Awake()
     {
+        Instance = this;
+
         int seed = System.DateTime.Now.Millisecond + System.DateTime.Now.Minute + System.DateTime.Now.Hour;
         Random.InitState(seed);
 
