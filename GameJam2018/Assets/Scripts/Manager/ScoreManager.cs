@@ -110,12 +110,15 @@ public class ScoreManager : MonoBehaviour
         ReceiptScreen.gameObject.SetActive(true);
 
         AnimatedEntry.Instance.AnimateOn();
-        
-        Instance.UI_Star1.gameObject.SetActive(UberRating > 4);
-        Instance.UI_Star2.gameObject.SetActive(UberRating > 3);
-        Instance.UI_Star3.gameObject.SetActive(UberRating > 2);
-        Instance.UI_Star4.gameObject.SetActive(UberRating > 1);
-        Instance.UI_Star5.gameObject.SetActive(UberRating > 0);
+
+        float rating = Reviews[Reviews.Count - 1].Rating;
+
+
+        Instance.UI_Star1.gameObject.SetActive(rating > 4);
+        Instance.UI_Star2.gameObject.SetActive(rating > 3);
+        Instance.UI_Star3.gameObject.SetActive(rating > 2);
+        Instance.UI_Star4.gameObject.SetActive(rating > 1);
+        Instance.UI_Star5.gameObject.SetActive(rating > 0);
 
         Instance.PassangerText.text = Reviews[Reviews.Count - 1].Name;
         Instance.EarningsText.text = "$" + Reviews[Reviews.Count - 1].Payment;
@@ -137,4 +140,9 @@ public class ScoreManager : MonoBehaviour
     void Update ()
     {		
 	}
+
+    public static void ResetScore()
+    {
+        UberRating = 0;
+    }
 }
