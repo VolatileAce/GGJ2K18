@@ -91,12 +91,20 @@ public class AlienAI : MonoBehaviour
     {
         Instance = this;
     }
-        
+
+    private AlienArmLimb[] armLimbs;
+    private AlienHeadLimb[] headLimbs;
+
+
     // Use this for initialization
     void Start()
     {
+        armLimbs = gameObject.GetComponentsInChildren<AlienArmLimb>();
+        headLimbs = gameObject.GetComponentsInChildren<AlienHeadLimb>();
+
         Randomize();
         Requirements = new AlienRequirements(this);
+
     }
 
     private Dictionary<HeadLimbType, int> HeadMaxes = new Dictionary<HeadLimbType, int>();
@@ -117,14 +125,11 @@ public class AlienAI : MonoBehaviour
 
     public void Randomize()
     {
-        var armLimbs = gameObject.GetComponentsInChildren<AlienArmLimb>();
-        var headLimbs = gameObject.GetComponentsInChildren<AlienHeadLimb>();
-
         //Work out the max
         foreach (var ele in headLimbs)
         {
             if (ele.LocationID != 0)
-                if (VisibilityTable.ContainsKey(ele.LocationID))
+                if (!VisibilityTable.ContainsKey(ele.LocationID))
                     VisibilityTable.Add(ele.LocationID, false);
 
             if (!HeadMaxes.ContainsKey(ele.Limb))
@@ -154,9 +159,12 @@ public class AlienAI : MonoBehaviour
         GalacticHome = (AlienGalacticHome)Random.Range((int)0, (int)TorsoLimbType.MAX_TYPES);
 
         //Randomize the skin color
-        TorsoColor = (TorsoLimbType)Random.Range((int)1, (int)TorsoLimbType.MAX_TYPES );
+        var previous = TorsoColor;
 
-        switch(TorsoColor)
+        while (TorsoColor == previous)
+            TorsoColor = (TorsoLimbType)Random.Range((int)1, (int)TorsoLimbType.MAX_TYPES);
+
+        switch (TorsoColor)
         {
             case TorsoLimbType.Blue:
                 AlienSkinMaterial.color = SkinBlue;
@@ -170,6 +178,9 @@ public class AlienAI : MonoBehaviour
                 AlienSkinMaterial.color = SkinRed;
                 break;
         }
+
+        HeadLimbCount.Clear();
+        ArmLimbCount.Clear();
 
         HeadLimbCount.Add(HeadLimbType.Eye_Stalk, Random.Range(0, HeadMaxes[HeadLimbType.Eye_Stalk]));
         HeadLimbCount.Add(HeadLimbType.EyeBalls, Random.Range(0, HeadMaxes[HeadLimbType.EyeBalls]));
@@ -259,7 +270,7 @@ public class AlienAI : MonoBehaviour
     {
         Requirements.Evaluate();
 
-        switch(UserSpaceState.Destination)
+        switch(RoundManager.Instance.CurrentGameState)
         {
             case UserSpaceState.Pickup:
             case UserSpaceState.Transport:

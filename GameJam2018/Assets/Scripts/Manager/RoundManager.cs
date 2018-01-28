@@ -59,6 +59,7 @@ public class RoundManager : MonoBehaviour
     {
         CurrentGameState = in_NewState;
         StateText.text = CurrentGameState.ToString().Replace('_', ' ');
+        ScoreManager.ResetScore();
         RoundTimer = Stopwatch.StartNew();
     }
 
@@ -98,17 +99,18 @@ public class RoundManager : MonoBehaviour
             case UserSpaceState.Transport:
                 if (remainingTimeInState <= 0)
                 {
-                    ChangeState(UserSpaceState.Destination);
                     ScoreManager.EvaluateWinCondition();
+                    ChangeState(UserSpaceState.Destination);
                     ScoreManager.Instance.ShowReceiptScreen();
                 }
                 break;
 
             case UserSpaceState.Destination:
                 if (remainingTimeInState <= 0)
-                {
+                {                   
                     ChangeState(UserSpaceState.Pickup);
                     ScoreManager.Instance.HideReceiptScreen(); 
+                    
                     AlienAI.Instance.Randomize();
                 }
                 break;
