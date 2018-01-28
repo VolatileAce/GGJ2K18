@@ -78,6 +78,7 @@ ModelImporter:
     2300038: screenLegs
     2300040: screenLegs001
     2300042: ship
+    2300044: //RootNode
     3300000: Box003
     3300002: Box004
     3300004: Box005
@@ -100,6 +101,7 @@ ModelImporter:
     3300038: screenLegs
     3300040: screenLegs001
     3300042: ship
+    3300044: //RootNode
     4300000: ship
     4300002: panelDials
     4300004: Box003
