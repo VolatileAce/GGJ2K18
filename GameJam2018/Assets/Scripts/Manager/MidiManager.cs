@@ -10,6 +10,7 @@ public class MidiManager : MonoBehaviour {
     public List<Button> AllButtons;
     public List<Slider> AllKnobs;
 
+
     void Awake()
     {
         Instance = this;
@@ -54,6 +55,8 @@ public class MidiManager : MonoBehaviour {
 
     public static void RegisterButton(Button in_Button)
     {
+        if ()
+
         Instance.AllButtons.Add(in_Button);
     }
 

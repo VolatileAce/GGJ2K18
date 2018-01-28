@@ -9,13 +9,15 @@ public class SplineWalkerControls : MonoBehaviour {
 	public SplineWalkerMode mode;
     public GasType GasType;
 
-	public float progress;
+	public float currentValue;
+    public float desiredValue;
 	private bool goingForward = true;
 
 	private void Update () {
 
-        progress = AtmosphereManager.GetGas(GasType).Percentage;
-        UpdatePosition(progress);
+        desiredValue = AtmosphereManager.GetGas(GasType).Percentage;
+        currentValue = Mathf.Lerp(currentValue, desiredValue, 0.004f);
+        UpdatePosition(currentValue);
 
 	}
 
@@ -36,7 +38,7 @@ public class SplineWalkerControls : MonoBehaviour {
                 }
                 else
                 {
-                    value = 2f - progress;
+                    value = 2f - value;
                     goingForward = false;
                 }
             }
@@ -45,12 +47,12 @@ public class SplineWalkerControls : MonoBehaviour {
         {
             if (value < 0f)
             {
-                value = -progress;
+                value = -value;
                 goingForward = true;
             }
         }
 
-        Vector3 position = spline.GetPoint(progress);
+        Vector3 position = spline.GetPoint(value);
         transform.position = position;
         if (lookForward)
         {

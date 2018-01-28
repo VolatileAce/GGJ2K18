@@ -255,7 +255,7 @@ GameObject:
   - component: {fileID: 307489726}
   - component: {fileID: 307489725}
   m_Layer: 5
-  m_Name: Francisco
+  m_Name: Paco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -311,7 +311,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Francisco Jose Casares
+  m_Text: Paco (like Taco) Casares
 --- !u!222 &307489726
 CanvasRenderer:
   m_ObjectHideFlags: 0

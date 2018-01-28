@@ -26,6 +26,7 @@ public class Slider : InteractableItem
     {
         base.Start();
         MidiManager.RegisterDial(this);
+        OnSliderChange(0);
     }
 
     public override void OnClickStay(Vector3 in_WorldMousePos)

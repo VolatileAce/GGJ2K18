@@ -32,9 +32,9 @@ public class Dial : Slider {
             angle = 180 + (180 - angle);
         }
 
+        Debug.Log(angle);
 
-
-        OnSliderChange((angle / 320) + CurrentValue);
+        OnSliderChange((angle / 320));
 
     }
 

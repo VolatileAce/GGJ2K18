@@ -28,10 +28,8 @@ public class AtmosphereManager : MonoBehaviour
     {
         foreach (Gas gas in Instance.AllGases)
         {
-            Debug.Log("input: " + in_Type + ", is it: " + gas.GasType);
             if (gas.GasType.Equals(in_Type)) {
                 gas.Percentage = in_Percentage;
-                Debug.Log("Yep");
             }         
         }
     }
