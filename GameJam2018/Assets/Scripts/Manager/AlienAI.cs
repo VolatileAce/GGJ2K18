@@ -50,6 +50,8 @@ public class AlienAI : MonoBehaviour
     public Color SkinBlue;
     public Color SkinGreen;
 
+    public Transform alien;
+
     private List<string> NamePrefix = new List<string>()
     {
         "Mee",
@@ -256,5 +258,19 @@ public class AlienAI : MonoBehaviour
     void Update()
     {
         Requirements.Evaluate();
+
+        switch(UserSpaceState.Destination)
+        {
+            case UserSpaceState.Pickup:
+            case UserSpaceState.Transport:
+                alien.gameObject.SetActive(true );
+                break;
+
+            case UserSpaceState.Destination:
+                alien.gameObject.SetActive(false);
+                break;
+
+        }
+            
     }
 }
