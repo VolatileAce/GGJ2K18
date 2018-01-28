@@ -39,7 +39,7 @@ public class MidiManager : MonoBehaviour {
             if ((button.Channel == channel) && (button.Note == noteNumber))
                 button.OnButtonUp();
         }
-    }
+   } 
 
     public void OnKnobChange(MidiChannel channel, int DialNumber, float newValue)
     {

@@ -99,9 +99,7 @@ public class RoundManager : MonoBehaviour
             case UserSpaceState.Transport:
                 if (remainingTimeInState <= 0)
                 {
-                    ScoreManager.EvaluateWinCondition();
-                    ChangeState(UserSpaceState.Destination);
-                    ScoreManager.Instance.ShowReceiptScreen();
+                    ForceEndRound();
                 }
                 break;
 
@@ -116,4 +114,15 @@ public class RoundManager : MonoBehaviour
                 break;
         }
     }
+
+    public void ForceEndRound()
+    {
+        if (CurrentGameState == UserSpaceState.Pickup || CurrentGameState == UserSpaceState.Transport)
+        {
+            ScoreManager.EvaluateWinCondition();
+            ChangeState(UserSpaceState.Destination);
+            ScoreManager.Instance.ShowReceiptScreen();
+        }
+    }
+    
 }
