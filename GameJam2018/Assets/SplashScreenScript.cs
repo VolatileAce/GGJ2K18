@@ -35,6 +35,11 @@ public class SplashScreenScript : MonoBehaviour
         Application.LoadLevel(1);
     }
 
+    public void OnManualClick(string url)
+    {
+        Application.OpenURL(url);
+    }
+
     public void OnCreditsClick()
     {
         Application.LoadLevel(2);
